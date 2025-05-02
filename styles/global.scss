@@ -1,0 +1,13 @@
+@use '@/styles/reset.scss';
+@use '@/styles/theme.scss';
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}

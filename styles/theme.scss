@@ -1,0 +1,12 @@
+$color-black: #000;
+$color-white: #fff;
+
+:root {
+	--color-bg: #{$color-white};
+	--color-text: #{$color-black};
+}
+
+[data-theme="dark"] {
+	--color-bg: #{$color-black};
+	--color-text: #{$color-white};
+}
