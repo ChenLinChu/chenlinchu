@@ -7,3 +7,21 @@
 .title {
 	font-size: 1rem;
 }
+
+.nav {
+	display: flex;
+	gap: 10px;
+}
+
+.navButton {
+	font-size: 1rem;
+	text-decoration: none;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

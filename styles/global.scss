@@ -11,5 +11,5 @@ body {
 	font-family: 'Inter', sans-serif;
 	color: var(--color-text);
 	background-color: var(--color-bg);
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition: background-color 0.3s linear, color 0.1s linear;
 }
