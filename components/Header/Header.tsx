@@ -38,22 +38,31 @@ export default function Header() {
                 }}
             >
                 <h1 className={Styles.title}>
-                    Chen Lin Chu's Portfolio
+                    CHEN LIN <span className={Styles.redText}>CHU</span>
                 </h1>
             </Link>
+
             <nav className={Styles.nav}>
-                <Link href="/projects" className={Styles.navButton}>
-                    Projects
-                </Link>
-                <Link href="/about" className={Styles.navButton}>
-                    About Me
-                </Link>
-                <button
+                <Link
                     className={Styles.navButton}
+                    href="/projects"
+                >
+                    projects
+                </Link>
+
+                <Link
+                    className={Styles.navButton}
+                    href="/contact"
+                >
+                    contact
+                </Link>
+
+                <button
+                    className={Styles.themeButton}
                     onClick={toggleTheme}
                     aria-label={`切換至${theme === 'light' ? '深色' : '淺色'}模式`}
                 >
-                    {theme === 'light' ? '🌙' : '☀️'}
+                    {theme === 'light' ? 'DARK' : 'LIGHT'}
                 </button>
             </nav>
         </div>
