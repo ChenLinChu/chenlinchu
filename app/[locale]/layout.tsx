@@ -31,12 +31,27 @@ export default async function RootLayout({
             <head>
                 <link
                     rel="icon"
+                    type="image/x-icon"
                     href="/favicon.ico"
+                    sizes="16x16"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="/favicon-32x32.png"
+                    sizes="32x32"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="/favicon-96x96.png"
+                    sizes="96x96"
                 />
             </head>
+
             <body className={inter.className}>
                 <NextIntlClientProvider>
-                    <Header params={params} />
+                    <Header />
 
                     <main className={Styles.main}>
                         {children}

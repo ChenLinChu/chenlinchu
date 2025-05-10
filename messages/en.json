@@ -1,13 +1,16 @@
 {
-    "Metadata": {
+    "metadata": {
         "page": {
             "title": "Chen Lin Chu - Portfolio",
             "description": "Chen Lin Chu's portfolio"
         }
     },
-    "Header": {
+    "header": {
         "all": "All",
         "projects": "Projects",
         "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "Copyright © 2025 Chen Lin Chu. All rights reserved."
     }
 }

@@ -1,16 +1,14 @@
 import { headers } from 'next/headers';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import { Link } from '@/i18n/navigation';
 
 import Styles from './Header.module.scss';
 
-export default async function Header(
-    { params }: { params: Promise<{ locale: string; }> }
-): Promise<React.ReactNode> {
-    const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: 'Header' });
+export default async function Header(): Promise<React.ReactNode> {
+    const locale = await getLocale();
+    const t = await getTranslations({ locale, namespace: 'header' });
     const headersList = await headers();
     const pathname = headersList.get('x-current-path');
 

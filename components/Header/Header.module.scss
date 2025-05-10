@@ -1,38 +1,25 @@
 .header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1px 5px;
+    justify-content: center;
+    padding: 30px 0;
 }
 
 .nav {
     display: flex;
-    gap: 25px;
+    gap: 10px;
     align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid white;
 
     &__button {
-        position: relative;
+        width: 200px;
+        padding: 10px 0;
         color: var(--color-text);
         font-size: 1.5rem;
+        text-align: center;
         text-decoration: none;
+        border: 1px solid red;
         cursor: pointer;
-
-        &::after {
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            width: 0%;
-            height: 2px;
-            background-color: #f00;
-            transform: translateX(-50%);
-            transition: width 0.15s ease-in-out;
-            content: '';
-        }
-
-        &:hover {
-            &::after {
-                width: 100%;
-            }
-        }
     }
 }
