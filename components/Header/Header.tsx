@@ -1,13 +1,16 @@
 
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 import Styles from './Header.module.scss';
 
 export default function Header(): React.ReactNode {
     const [theme, setTheme] = useState('dark');
+
+    const t = useTranslations('Header');
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
@@ -53,14 +56,14 @@ export default function Header(): React.ReactNode {
                     className={Styles['nav__button']}
                     href="/projects"
                 >
-                    projects
+                    {t('projects')}
                 </Link>
 
                 <Link
                     className={Styles['nav__button']}
                     href="/contact"
                 >
-                    contact
+                    {t('contact')}
                 </Link>
 
                 <button

@@ -1,7 +1,12 @@
 {
-    "header": {
-        "portfolio": "Chen Lin Chu's Portfolio",
+    "Metadata": {
+        "page": {
+            "title": "Chen Lin Chu - Portfolio",
+            "description": "Chen Lin Chu's portfolio"
+        }
+    },
+    "Header": {
         "projects": "Projects",
-        "about": "About Me"
+        "contact": "Contact"
     }
 }

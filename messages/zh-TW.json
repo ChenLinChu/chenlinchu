@@ -1,7 +1,12 @@
 {
-    "header": {
-        "portfolio": "朱晨霖的作品集",
+    "Metadata": {
+        "page": {
+            "title": "朱晨霖 - 作品集",
+            "description": "朱晨霖的作品集"
+        }
+    },
+    "Header": {
         "projects": "專案作品",
-        "about": "關於我"
+        "contact": "聯絡我"
     }
 }

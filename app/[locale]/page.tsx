@@ -1,8 +1,19 @@
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 
 import Block from '@/components/Block/Block';
 
 import Styles from './page.module.scss';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+    return {
+        title: t('page.title'),
+        description: t('page.description')
+    };
+}
 
 export default function Index(): React.ReactNode {
     return (

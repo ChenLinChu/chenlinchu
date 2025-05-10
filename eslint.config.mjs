@@ -139,7 +139,12 @@ const eslintConfig = [
             // 導入規則
             'import/no-unresolved': 'error',
             'import/no-duplicates': 'error',
-            'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+            "import/no-extraneous-dependencies": ["error", {
+                "dependencies": true,
+                "devDependencies": true,
+                "optionalDependencies": false,
+                "peerDependencies": false
+            }],
             'import/newline-after-import': 'error',
             'simple-import-sort/imports': 'error',
             'simple-import-sort/exports': 'error',

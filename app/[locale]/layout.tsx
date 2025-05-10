@@ -2,7 +2,8 @@ import '@/styles/global.scss';
 
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import React from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import { NextIntlClientProvider } from 'next-intl';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
@@ -15,16 +16,16 @@ const inter = Inter({
     display: 'swap'
 });
 
-export const metadata: Metadata = {
-    title: 'Chen Lin Chu - Portfolio',
-    description: "Chen Lin Chu's portfolio"
-};
+export default async function RootLayout({
+    children, params
+}: {
+    children: ReactNode;
+    params: Promise<{ locale: string; }>;
+}): Promise<ReactElement> {
+    const { locale } = await params;
 
-export default function RootLayout({
-    children
-}: Readonly<{ children: React.ReactNode; }>): React.ReactElement {
     return (
-        <html lang="en">
+        <html lang={locale}>
             <head>
                 <link
                     rel="icon"
@@ -32,11 +33,15 @@ export default function RootLayout({
                 />
             </head>
             <body className={inter.className}>
-                <Header />
-                <main className={Styles.main}>
-                    {children}
-                </main>
-                <Footer />
+                <NextIntlClientProvider>
+                    <Header />
+
+                    <main className={Styles.main}>
+                        {children}
+                    </main>
+
+                    <Footer />
+                </NextIntlClientProvider>
             </body>
         </html>
     );
