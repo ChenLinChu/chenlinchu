@@ -1,17 +1,22 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import React from 'react';
 
 import Block from '@/components/Block/Block';
+import LocaleSwitch from '@/components/BlockComponents/LocaleSwitch';
+import ToggleTheme from '@/components/BlockComponents/ToggleTheme';
 
 import Styles from './page.module.scss';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; }> }) {
+export async function generateMetadata(
+    { params }: { params: Promise<{ locale: string; }> }
+): Promise<Metadata> {
     const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    const t = await getTranslations({ locale, namespace: 'Metadata.page' });
 
     return {
-        title: t('page.title'),
-        description: t('page.description')
+        title: t('title'),
+        description: t('description')
     };
 }
 
@@ -29,15 +34,13 @@ export default function Index(): React.ReactNode {
                 column={'6 / span 1'}
                 row={'1 / span 1'}
             >
-                <h1>Hello</h1>
-                <p>elit. Eum iusto vel perspiciatis sint</p>
+                <ToggleTheme />
             </Block>
             <Block
                 column={'7 / span 1'}
                 row={'1 / span 1'}
             >
-                <h1>Hello</h1>
-                <p>elit. Eum iusto vel perspiciatis sint</p>
+                <LocaleSwitch />
             </Block>
             <Block
                 column={'8 / span 1'}

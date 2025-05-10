@@ -6,6 +6,7 @@
         }
     },
     "Header": {
+        "all": "全部",
         "projects": "專案作品",
         "contact": "聯絡我"
     }

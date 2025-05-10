@@ -1,9 +1,9 @@
 import '@/styles/global.scss';
 
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import type { ReactElement, ReactNode } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import type { ReactElement, ReactNode } from 'react';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
@@ -24,6 +24,8 @@ export default async function RootLayout({
 }): Promise<ReactElement> {
     const { locale } = await params;
 
+    setRequestLocale(locale);
+
     return (
         <html lang={locale}>
             <head>
@@ -34,7 +36,7 @@ export default async function RootLayout({
             </head>
             <body className={inter.className}>
                 <NextIntlClientProvider>
-                    <Header />
+                    <Header params={params} />
 
                     <main className={Styles.main}>
                         {children}

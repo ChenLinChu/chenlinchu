@@ -3,13 +3,11 @@ import React, { isValidElement } from 'react';
 import Styles from './Block.module.scss';
 import type { BlockProps } from './types';
 
-export default function Block(
-    {
-        children,
-        column = '1 / span 1',
-        row = '1 / span 1'
-    }: BlockProps
-): React.ReactNode {
+export default function Block({
+    children,
+    column = '1 / span 1',
+    row = '1 / span 1'
+}: BlockProps): React.ReactNode {
     const childArray = React.Children.toArray(children).filter(isValidElement);
 
     return (

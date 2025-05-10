@@ -6,6 +6,7 @@
         }
     },
     "Header": {
+        "all": "All",
         "projects": "Projects",
         "contact": "Contact"
     }
