@@ -1,10 +1,12 @@
+
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import Styles from './Header.module.scss';
 
-export default function Header() {
+export default function Header(): React.ReactNode {
     const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
@@ -14,15 +16,19 @@ export default function Header() {
             setTheme(savedTheme);
             document.documentElement.setAttribute('data-theme', savedTheme);
         } else {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const prefersDark = window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            ).matches;
             const initialTheme = prefersDark ? 'dark' : 'light';
+
             setTheme(initialTheme);
             document.documentElement.setAttribute('data-theme', initialTheme);
         }
     }, []);
 
-    const toggleTheme = () => {
+    const toggleTheme = (): void => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
+
         setTheme(newTheme);
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
@@ -38,27 +44,27 @@ export default function Header() {
                 }}
             >
                 <h1 className={Styles.title}>
-                    CHEN LIN <span className={Styles.redText}>CHU</span>
+                    CHEN LIN <span className={Styles['title__red']}>CHU</span>
                 </h1>
             </Link>
 
             <nav className={Styles.nav}>
                 <Link
-                    className={Styles.navButton}
+                    className={Styles['nav__button']}
                     href="/projects"
                 >
                     projects
                 </Link>
 
                 <Link
-                    className={Styles.navButton}
+                    className={Styles['nav__button']}
                     href="/contact"
                 >
                     contact
                 </Link>
 
                 <button
-                    className={Styles.themeButton}
+                    className={Styles['nav__button--theme']}
                     onClick={toggleTheme}
                     aria-label={`切換至${theme === 'light' ? '深色' : '淺色'}模式`}
                 >

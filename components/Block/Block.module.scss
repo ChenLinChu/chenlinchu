@@ -1,0 +1,14 @@
+.block {
+    margin: 4px;
+    padding: 20px 24px;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    background-color: rgb(9 9 11 / 40%);
+    border: 1px solid hsl(0deg 0% 100% / 10%);
+    border-radius: 24px;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        background-color: rgb(9 9 11 / 90%);
+    }
+}

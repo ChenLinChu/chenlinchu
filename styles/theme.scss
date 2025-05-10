@@ -2,11 +2,11 @@ $color-black: #1a1a1a;
 $color-white: #fafafa;
 
 :root {
-	--color-bg: #{$color-black};
-	--color-text: #{$color-white};
+    --color-bg: #{$color-black};
+    --color-text: #{$color-white};
 }
 
 [data-theme="light"] {
-	--color-bg: #{$color-white};
-	--color-text: #{$color-black};
+    --color-bg: #{$color-white};
+    --color-text: #{$color-black};
 }

@@ -1,15 +1,14 @@
-@use '@/styles/reset.scss';
-@use '@/styles/theme.scss';
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import '@/styles/reset';
+@import '@/styles/theme';
+@import 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap';
 
 html {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 body {
-	font-family: 'Inter', sans-serif;
-	color: var(--color-text);
-	background-color: var(--color-bg);
-	transition: background-color 0.3s linear, color 0.1s linear;
+    color: var(--color-text);
+    font-family: Inter, sans-serif;
+    background-color: var(--color-bg);
+    transition: background-color 0.3s linear, color 0.1s linear;
 }

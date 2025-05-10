@@ -1,73 +1,74 @@
 .container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 5px;
 }
 
 .title {
-	font-size: 2.5rem;
-	font-weight: 900;
+    font-size: 2.5rem;
+    font-weight: 900;
 
-	&:hover {
-		font-weight: 500;
+    &__red {
+        color: #f00;
+        font-weight: 500;
+    }
 
-		.redText {
-			font-weight: 900;
-		}
-	}
+    &:hover {
+        font-weight: 500;
 
-	.redText {
-		font-weight: 500;
-		color: #f00;
-	}
+        .title__red {
+            font-weight: 900;
+        }
+    }
 }
 
 .nav {
-	display: flex;
-	align-items: center;
-	gap: 25px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
 
-	.navButton,
-	.themeButton {
-		font-size: 1.5rem;
-		text-decoration: none;
-		color: var(--color-text);
-		cursor: pointer;
-	}
+    &__button,
+    &__button--theme {
+        color: var(--color-text);
+        font-size: 1.5rem;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-	.navButton {
-		position: relative;
+    &__button {
+        position: relative;
 
-		&::after {
-			position: absolute;
-			bottom: -2px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 0%;
-			height: 2px;
-			background-color: #f00;
-			content: '';
-			transition: width 0.15s ease-in-out;
-		}
+        &::after {
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background-color: #f00;
+            transform: translateX(-50%);
+            transition: width 0.15s ease-in-out;
+            content: '';
+        }
 
-		&:hover {
-			&::after {
-				width: 100%;
-			}
-		}
-	}
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
 
-	.themeButton {
-		padding: 5px 10px;
-		font-size: 0.8rem;
-		font-weight: 900;
-		color: var(--color-bg);
-		background-color: var(--color-text);
-		border: 0px;
-		border-radius: 18px;
-		&:hover {
-			opacity: 0.8;
-		}
-	}
+        &--theme {
+            padding: 5px 10px;
+            color: var(--color-bg);
+            font-size: 0.8rem;
+            font-weight: 900;
+            background-color: var(--color-text);
+            border: 0;
+            border-radius: 18px;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
 }
