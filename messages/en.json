@@ -15,6 +15,28 @@
             "profile": {
                 "name": "Chen Lin Chu",
                 "description": "Hello"
+            },
+            "localTime": {
+                "title": "Local Time"
+            },
+            "localeSwitch": {
+                "title": "Locale",
+                "locale": {
+                    "en": "English",
+                    "zh-TW": "Chinese"
+                }
+            },
+            "resume": {
+                "title": "Resume"
+            },
+            "toggleTheme": {
+                "title": "Theme",
+                "light": "Light",
+                "dark": "Dark",
+                "button": {
+                    "ariaLabel": "Switch to {theme} mode",
+                    "text": "{theme} Mode"
+                }
             }
         }
     },

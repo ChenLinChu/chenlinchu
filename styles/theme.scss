@@ -1,12 +1,21 @@
-$color-black: #1a1a1a;
+$color-black: #1e1e1e;
 $color-white: #fafafa;
+$color-gray: #a3a3a3;
 
 :root {
     --color-bg: #{$color-black};
     --color-text: #{$color-white};
+    --block-title: #{$color-gray};
+    --block-bg: rgb(0 0 0 / 50%);
+    --block-hover-bg: rgb(0 0 0 / 70%);
+    --bg-image-path: url('/images/bg/dark.jpg');
 }
 
 [data-theme="light"] {
     --color-bg: #{$color-white};
     --color-text: #{$color-black};
+    --block-title: #{$color-gray};
+    --block-bg: rgb(255 255 255 / 50%);
+    --block-hover-bg: rgb(255 255 255 / 70%);
+    --bg-image-path: url('/images/bg/light.jpg');
 }

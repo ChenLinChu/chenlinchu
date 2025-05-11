@@ -15,6 +15,28 @@
             "profile": {
                 "name": "朱晨霖",
                 "description": "哇搭西哇"
+            },
+            "localTime": {
+                "title": "本地時間"
+            },
+            "localeSwitch": {
+                "title": "語言",
+                "locale": {
+                    "en": "英文",
+                    "zh-TW": "中文"
+                }
+            },
+            "resume": {
+                "title": "履歷"
+            },
+            "toggleTheme": {
+                "title": "主題",
+                "light": "淺色",
+                "dark": "深色",
+                "button": {
+                    "ariaLabel": "切換至{theme}模式",
+                    "text": "{theme}模式"
+                }
             }
         }
     },

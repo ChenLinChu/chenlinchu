@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+
+    .title {
+        color: var(--block-title);
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .locale {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 2px;
+        border: 1px solid var(--color-text);
+        border-radius: 0.5rem;
+
+        .locale__link {
+            box-sizing: border-box;
+            width: 49.5%;
+            height: 100%;
+            padding: 0.1rem 0;
+            color: var(--color-text);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0.3rem;
+            transition: color 0.5s ease, background-color 0.5s ease;
+
+            &:hover,
+            &.active {
+                color: var(--color-bg);
+                background-color: var(--color-text);
+            }
+        }
+    }
+}

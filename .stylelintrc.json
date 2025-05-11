@@ -258,7 +258,7 @@
         "no-descending-specificity": true,
         "no-empty-source": null,
         "max-nesting-depth": 3,
-        "selector-max-specificity": "0,3,1",
+        "selector-max-specificity": "0,4,1",
         "selector-max-compound-selectors": 3,
         "media-feature-range-notation": null,
         "number-max-precision": 3,
@@ -276,9 +276,6 @@
             "ms",
             "s",
             "fr"
-        ],
-        "property-disallowed-list": [
-            "z-index"
         ],
         "selector-max-id": 0
     }

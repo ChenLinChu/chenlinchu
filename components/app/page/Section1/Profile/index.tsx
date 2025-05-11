@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getLocale, getTranslations } from 'next-intl/server';
 import React from 'react';
 
-import Styles from './Profile.module.scss';
+import Styles from './index.module.scss';
 
 export default async function Profile(): Promise<React.ReactNode> {
     const locale = await getLocale();
@@ -20,6 +20,7 @@ export default async function Profile(): Promise<React.ReactNode> {
                     className={Styles.profile_info_image}
                     width={100}
                     height={100}
+                    priority
                 />
 
                 <h2 className={Styles.profile_info_name}>

@@ -4,4 +4,5 @@ export interface BlockProps {
     children?: ReactNode;
     column?: string;
     row?: string;
+    noPadding?: boolean;
 }
