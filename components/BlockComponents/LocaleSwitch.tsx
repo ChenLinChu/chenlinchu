@@ -13,7 +13,7 @@ export default function LocaleSwitch(): React.ReactNode {
             >
                 English
             </Link>
-
+            <br />
             <Link
                 href="/"
                 locale='zh-TW'

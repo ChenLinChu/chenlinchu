@@ -10,6 +10,14 @@
         "projects": "專案作品",
         "contact": "聯絡我"
     },
+    "main": {
+        "block": {
+            "profile": {
+                "name": "朱晨霖",
+                "description": "哇搭西哇"
+            }
+        }
+    },
     "footer": {
         "copyright": "版權所有 © 2025 朱晨霖。保留所有權利。"
     }

@@ -10,6 +10,14 @@
         "projects": "Projects",
         "contact": "Contact"
     },
+    "main": {
+        "block": {
+            "profile": {
+                "name": "Chen Lin Chu",
+                "description": "Hello"
+            }
+        }
+    },
     "footer": {
         "copyright": "Copyright © 2025 Chen Lin Chu. All rights reserved."
     }
