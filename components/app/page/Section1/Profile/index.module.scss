@@ -15,10 +15,12 @@
             font-weight: 600;
         }
 
+        &_quote,
         &_description {
             margin-top: 20px;
             font-size: 1rem;
             font-weight: 400;
+            line-height: 1.5;
         }
     }
 }

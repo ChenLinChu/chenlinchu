@@ -1,0 +1,23 @@
+.nav_button_bg {
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    z-index: 1;
+    width: 150px;
+    height: 80%;
+    background-color: var(--header-nav-button-bg);
+    border-radius: 40px;
+    transition: left 0.1s linear;
+}
+
+.left-5px {
+    left: 5px;
+}
+
+.left-165px {
+    left: 165px;
+}
+
+.left-325px {
+    left: 325px;
+}

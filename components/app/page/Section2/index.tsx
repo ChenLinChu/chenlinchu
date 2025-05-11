@@ -38,7 +38,7 @@ export default function Section2(): React.ReactNode {
                 column={'2 / span 3'}
                 row={'4 / span 3'}
             >
-                <p>技能樹</p>
+                <p>TBA</p>
             </Block>
 
             {/* Career Experience */}
@@ -46,7 +46,7 @@ export default function Section2(): React.ReactNode {
                 column={'5 / span 4'}
                 row={'4 / span 4'}
             >
-                <p>職涯經歷</p>
+                <p>TBA</p>
             </Block>
         </>
     );

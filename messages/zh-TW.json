@@ -14,7 +14,8 @@
         "block": {
             "profile": {
                 "name": "朱晨霖",
-                "description": "哇搭西哇"
+                "quote": "在 AI 高速發展的時代，能成為一名前端工程師是件幸福的事，但我們不能因為過於便利而喪失探究知識本質的能力。",
+                "description": "目前上班寫 Nuxt，下班寫 Next。"
             },
             "localTime": {
                 "title": "本地時間"

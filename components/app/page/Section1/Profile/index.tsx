@@ -28,6 +28,10 @@ export default async function Profile(): Promise<React.ReactNode> {
                 </h2>
             </div>
 
+            <p className={Styles.profile_info_quote}>
+                {t('quote')}
+            </p>
+
             <p className={Styles.profile_info_description}>
                 {t('description')}
             </p>

@@ -14,7 +14,8 @@
         "block": {
             "profile": {
                 "name": "Chen Lin Chu",
-                "description": "Hello"
+                "quote": "In this fast-evolving AI era, being a front-end engineer is a blessing — but we must not lose the drive to explore the essence of knowledge.",
+                "description": "Currently coding Nuxt at work and Next after work."
             },
             "localTime": {
                 "title": "Local Time"

@@ -67,7 +67,7 @@ export default function Section1(): React.ReactNode {
                 column={'8 / span 1'}
                 row={'3 / span 1'}
             >
-                <p>待補完</p>
+                <p>TBA</p>
             </Block>
         </>
     );
