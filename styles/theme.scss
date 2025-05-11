@@ -3,19 +3,23 @@ $color-white: #fafafa;
 $color-gray: #a3a3a3;
 
 :root {
+    --bg-image-path: url('/images/bg/dark.jpg');
     --color-bg: #{$color-black};
     --color-text: #{$color-white};
     --block-title: #{$color-gray};
     --block-bg: rgb(0 0 0 / 50%);
     --block-hover-bg: rgb(0 0 0 / 70%);
-    --bg-image-path: url('/images/bg/dark.jpg');
+    --block-icon-color: #cfd1d4;
+    --block-icon-hover-color: #bbbdc0;
 }
 
 [data-theme="light"] {
+    --bg-image-path: url('/images/bg/light.jpg');
     --color-bg: #{$color-white};
     --color-text: #{$color-black};
     --block-title: #{$color-gray};
     --block-bg: rgb(255 255 255 / 50%);
     --block-hover-bg: rgb(255 255 255 / 70%);
-    --bg-image-path: url('/images/bg/light.jpg');
+    --block-icon-color: #4a4b4b;
+    --block-icon-hover-color: #2a2b2b;
 }

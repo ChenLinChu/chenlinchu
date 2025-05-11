@@ -2,6 +2,10 @@ import React from 'react';
 
 import Block from '@/components/Block';
 
+import GitHubIcon from './GitHubIcon';
+import LinkedInIcon from './LinkedInIcon';
+import MailIcon from './MailIcon';
+
 export default function Section2(): React.ReactNode {
     return (
         <>
@@ -10,7 +14,7 @@ export default function Section2(): React.ReactNode {
                 column={'1 / span 1'}
                 row={'4 / span 1'}
             >
-                <p>LinkedIn</p>
+                <LinkedInIcon />
             </Block>
 
             {/* Email */}
@@ -18,7 +22,7 @@ export default function Section2(): React.ReactNode {
                 column={'1 / span 1'}
                 row={'5 / span 1'}
             >
-                <p>Email</p>
+                <MailIcon />
             </Block>
 
             {/* GitHub */}
@@ -26,7 +30,7 @@ export default function Section2(): React.ReactNode {
                 column={'1 / span 1'}
                 row={'6 / span 1'}
             >
-                <p>GitHub</p>
+                <GitHubIcon />
             </Block>
 
             {/* Skills Tree */}
