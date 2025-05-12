@@ -12,6 +12,7 @@ $color-gray: #a3a3a3;
     --block-hover-bg: rgb(0 0 0 / 70%);
     --block-icon-color: #cfd1d4;
     --block-icon-hover-color: #bbbdc0;
+    --dino-game-button-bg: rgba(0 0 0 / 90%);
 }
 
 [data-theme="light"] {
@@ -24,4 +25,5 @@ $color-gray: #a3a3a3;
     --block-hover-bg: rgb(255 255 255 / 70%);
     --block-icon-color: #4a4b4b;
     --block-icon-hover-color: #2a2b2b;
+    --dino-game-button-bg: rgba(255 255 255 / 90%);
 }

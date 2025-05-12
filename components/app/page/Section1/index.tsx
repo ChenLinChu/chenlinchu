@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import DinoGameComponent from '@/components/app/page/Section1/DinoGame';
 import LocaleSwitch from '@/components/app/page/Section1/LocaleSwitch';
 import LocalTime from '@/components/app/page/Section1/LocalTime';
 import Map from '@/components/app/page/Section1/Map';
@@ -55,19 +56,21 @@ export default function Section1(): React.ReactNode {
                 </Block>
             </ThemeProvider>
 
-            {/* Resume */}
+            {/* Dino Game */}
             <Block
                 column={'6 / span 3'}
                 row={'2 / span 1'}
+                noPadding
             >
-                <Resume />
+                <DinoGameComponent />
             </Block>
 
+            {/* Resume */}
             <Block
                 column={'8 / span 1'}
                 row={'3 / span 1'}
             >
-                <p>TBA</p>
+                <Resume />
             </Block>
         </>
     );

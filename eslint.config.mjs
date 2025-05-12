@@ -69,7 +69,7 @@ const eslintConfig = [
             'comma-dangle': ['error', 'never'],
             'eol-last': ['error', 'always'],
             'quotes': ['error', 'single', { avoidEscape: true }],
-            'max-len': ['error', { code: 80, ignoreComments: true, ignoreUrls: true }],
+            'max-len': ['error', { code: 100, ignoreComments: true, ignoreUrls: true }],
             'linebreak-style': ['error', 'unix'],
             'object-curly-spacing': ['error', 'always'],
             'array-bracket-spacing': ['error', 'never'],

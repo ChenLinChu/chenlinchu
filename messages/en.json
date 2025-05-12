@@ -38,6 +38,13 @@
                     "ariaLabel": "Switch to {theme} mode",
                     "text": "{theme} Mode"
                 }
+            },
+            "dinoGame": {
+                "start": "Start Game",
+                "gameOver": "Game Over",
+                "score": "Score",
+                "highScore": "High Score",
+                "restart": "Restart"
             }
         }
     },

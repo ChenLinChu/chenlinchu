@@ -38,6 +38,13 @@
                     "ariaLabel": "切換至{theme}模式",
                     "text": "{theme}模式"
                 }
+            },
+            "dinoGame": {
+                "start": "開始遊戲",
+                "gameOver": "遊戲結束",
+                "score": "分數",
+                "highScore": "最高分",
+                "restart": "重新開始"
             }
         }
     },
