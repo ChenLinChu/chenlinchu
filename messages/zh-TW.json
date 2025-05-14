@@ -61,8 +61,10 @@
                 "effects": "特效",
                 "packagingTools": "打包工具",
                 "standards": "規範",
-                "ai": "AI",
-                "other": "其他"
+                "googleProducts": "Google 產品",
+                "awsProducts": "AWS 產品",
+                "other": "其他",
+                "aiTools": "AI 工具"
             }
         }
     },

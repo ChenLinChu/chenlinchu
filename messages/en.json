@@ -61,8 +61,10 @@
                 "effects": "Effects",
                 "packagingTools": "Packaging Tools",
                 "standards": "Standards",
-                "ai": "AI",
-                "other": "Other"
+                "googleProducts": "Google Products",
+                "awsProducts": "AWS Products",
+                "other": "Other",
+                "aiTools": "AI Tools"
             }
         }
     },
