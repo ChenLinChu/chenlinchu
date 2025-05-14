@@ -4,8 +4,12 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "GSAP",
+        "Laravel",
         "Memoji",
-        "Nuxt"
+        "Nuxt",
+        "Pixi",
+        "Qube"
     ],
     "ignoreWords": [],
     "import": []

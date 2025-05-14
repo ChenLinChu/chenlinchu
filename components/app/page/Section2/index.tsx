@@ -2,9 +2,11 @@ import React from 'react';
 
 import Block from '@/components/Block';
 
+import Experience from './Experience';
 import GitHubIcon from './GitHubIcon';
 import LinkedInIcon from './LinkedInIcon';
 import MailIcon from './MailIcon';
+import SkillsTree from './SkillsTree';
 
 export default function Section2(): React.ReactNode {
     return (
@@ -37,8 +39,9 @@ export default function Section2(): React.ReactNode {
             <Block
                 column={'2 / span 3'}
                 row={'4 / span 3'}
+                noPadding
             >
-                <p>TBA</p>
+                <SkillsTree />
             </Block>
 
             {/* Career Experience */}
@@ -46,7 +49,7 @@ export default function Section2(): React.ReactNode {
                 column={'5 / span 4'}
                 row={'4 / span 4'}
             >
-                <p>TBA</p>
+                <Experience />
             </Block>
         </>
     );

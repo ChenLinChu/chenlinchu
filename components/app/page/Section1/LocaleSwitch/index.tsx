@@ -7,7 +7,7 @@ import Styles from './index.module.scss';
 
 export default async function LocaleSwitch(): Promise<React.ReactNode> {
     const locale = await getLocale();
-    const t = await getTranslations('main.block.localeSwitch');
+    const t = await getTranslations('main.page.block.localeSwitch');
 
     return (
         <div className={Styles.container}>

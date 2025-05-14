@@ -8,7 +8,7 @@ export default async function Profile(): Promise<React.ReactNode> {
     const locale = await getLocale();
     const t = await getTranslations({
         locale,
-        namespace: 'main.block.profile'
+        namespace: 'main.page.block.profile'
     });
 
     return (

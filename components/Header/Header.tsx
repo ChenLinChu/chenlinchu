@@ -40,12 +40,12 @@ export default async function Header(): Promise<React.ReactNode> {
 
                 <Link
                     className={Styles['nav__button']}
-                    href="/contact"
+                    href="/skills"
                     aria-current={
-                        pathname === `/${locale}/contact` ? 'page' : undefined
+                        pathname === `/${locale}/skills` ? 'page' : undefined
                     }
                 >
-                    {t('contact')}
+                    {t('skills')}
                 </Link>
             </nav>
         </header>

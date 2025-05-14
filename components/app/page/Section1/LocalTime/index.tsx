@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import Styles from './index.module.scss';
 
 export default function LocalTime(): React.ReactNode {
-    const t = useTranslations('main.block.localTime');
+    const t = useTranslations('main.page.block.localTime');
 
     const [time, setTime] = useState<string>('');
 

@@ -8,43 +8,61 @@
     "header": {
         "all": "全部",
         "projects": "專案作品",
-        "contact": "聯絡我"
+        "skills": "技能"
     },
     "main": {
-        "block": {
-            "profile": {
-                "name": "朱晨霖",
-                "quote": "在 AI 高速發展的時代，能成為一名前端工程師是件幸福的事，但我們不能因為過於便利而喪失探究知識本質的能力。",
-                "description": "目前上班寫 Nuxt，下班寫 Next。"
-            },
-            "localTime": {
-                "title": "本地時間"
-            },
-            "localeSwitch": {
-                "title": "語言",
-                "locale": {
-                    "en": "英文",
-                    "zh-TW": "中文"
+        "page": {
+            "block": {
+                "profile": {
+                    "name": "朱晨霖",
+                    "quote": "在 AI 高速發展的時代，能成為一名前端工程師是件幸福的事，但我們不能因為過於便利而喪失探究知識本質的能力。",
+                    "description": "目前上班寫 Nuxt，下班寫 Next。"
+                },
+                "localTime": {
+                    "title": "本地時間"
+                },
+                "localeSwitch": {
+                    "title": "語言",
+                    "locale": {
+                        "en": "英文",
+                        "zh-TW": "中文"
+                    }
+                },
+                "resume": {
+                    "title": "履歷"
+                },
+                "toggleTheme": {
+                    "title": "主題",
+                    "light": "淺色",
+                    "dark": "深色",
+                    "button": {
+                        "ariaLabel": "切換至{theme}模式",
+                        "text": "{theme}模式"
+                    }
+                },
+                "dinoGame": {
+                    "start": "開始遊戲",
+                    "gameOver": "遊戲結束",
+                    "score": "分數",
+                    "highScore": "最高分",
+                    "restart": "重新開始"
+                },
+                "experience": {
+                    "title": "經歷"
                 }
-            },
-            "resume": {
-                "title": "履歷"
-            },
-            "toggleTheme": {
-                "title": "主題",
-                "light": "淺色",
-                "dark": "深色",
-                "button": {
-                    "ariaLabel": "切換至{theme}模式",
-                    "text": "{theme}模式"
-                }
-            },
-            "dinoGame": {
-                "start": "開始遊戲",
-                "gameOver": "遊戲結束",
-                "score": "分數",
-                "highScore": "最高分",
-                "restart": "重新開始"
+            }
+        },
+        "skills": {
+            "title": "目前使用",
+            "blockTitle": {
+                "frameworks": "框架",
+                "stateManagement": "狀態管理",
+                "languages": "語言",
+                "effects": "特效",
+                "packagingTools": "打包工具",
+                "standards": "規範",
+                "ai": "AI",
+                "other": "其他"
             }
         }
     },

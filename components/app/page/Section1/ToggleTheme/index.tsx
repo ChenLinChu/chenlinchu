@@ -10,7 +10,7 @@ import Styles from './index.module.scss';
 
 export default function ToggleTheme(): React.ReactNode {
     const { theme, toggleTheme } = useTheme();
-    const t = useTranslations('main.block.toggleTheme');
+    const t = useTranslations('main.page.block.toggleTheme');
 
     const themeText = theme === 'light'
         ? t('dark')

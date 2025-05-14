@@ -8,6 +8,7 @@ import type { ReactElement, ReactNode } from 'react';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 
+import { ThemeProvider } from '../providers/ThemeProvider';
 import Styles from './layout.module.scss';
 
 const inter = Inter({
@@ -54,7 +55,9 @@ export default async function RootLayout({
                     <Header />
 
                     <main className={Styles.main}>
-                        {children}
+                        <ThemeProvider>
+                            {children}
+                        </ThemeProvider>
                     </main>
 
                     <Footer />

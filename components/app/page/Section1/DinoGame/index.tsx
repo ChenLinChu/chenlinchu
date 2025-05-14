@@ -13,7 +13,7 @@ export default function DinoGameComponent(): React.ReactNode {
     const animationFrameRef = useRef<number | undefined>(undefined);
     const [gameState, setGameState] = useState<GameState | null>(null);
     const [isInitialized, setIsInitialized] = useState(false);
-    const t = useTranslations('main.block.dinoGame');
+    const t = useTranslations('main.page.block.dinoGame');
     const initializeGame = useCallback(() => {
         if (!containerRef.current) return;
 

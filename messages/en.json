@@ -8,43 +8,61 @@
     "header": {
         "all": "All",
         "projects": "Projects",
-        "contact": "Contact"
+        "skills": "Skills"
     },
     "main": {
-        "block": {
-            "profile": {
-                "name": "Chen Lin Chu",
-                "quote": "In this fast-evolving AI era, being a front-end engineer is a blessing — but we must not lose the drive to explore the essence of knowledge.",
-                "description": "Currently coding Nuxt at work and Next after work."
-            },
-            "localTime": {
-                "title": "Local Time"
-            },
-            "localeSwitch": {
-                "title": "Locale",
-                "locale": {
-                    "en": "English",
-                    "zh-TW": "Chinese"
+        "page": {
+            "block": {
+                "profile": {
+                    "name": "Chen Lin Chu",
+                    "quote": "In this fast-evolving AI era, being a front-end engineer is a blessing — but we must not lose the drive to explore the essence of knowledge.",
+                    "description": "Currently coding Nuxt at work and Next after work."
+                },
+                "localTime": {
+                    "title": "LOCAL TIME"
+                },
+                "localeSwitch": {
+                    "title": "LOCALE",
+                    "locale": {
+                        "en": "English",
+                        "zh-TW": "Chinese"
+                    }
+                },
+                "resume": {
+                    "title": "RESUME"
+                },
+                "toggleTheme": {
+                    "title": "THEME",
+                    "light": "Light",
+                    "dark": "Dark",
+                    "button": {
+                        "ariaLabel": "Switch to {theme} mode",
+                        "text": "{theme} Mode"
+                    }
+                },
+                "dinoGame": {
+                    "start": "Start Game",
+                    "gameOver": "Game Over",
+                    "score": "Score",
+                    "highScore": "High Score",
+                    "restart": "Restart"
+                },
+                "experience": {
+                    "title": "EXPERIENCE"
                 }
-            },
-            "resume": {
-                "title": "Resume"
-            },
-            "toggleTheme": {
-                "title": "Theme",
-                "light": "Light",
-                "dark": "Dark",
-                "button": {
-                    "ariaLabel": "Switch to {theme} mode",
-                    "text": "{theme} Mode"
-                }
-            },
-            "dinoGame": {
-                "start": "Start Game",
-                "gameOver": "Game Over",
-                "score": "Score",
-                "highScore": "High Score",
-                "restart": "Restart"
+            }
+        },
+        "skills": {
+            "title": "CURRENTLY USING",
+            "blockTitle": {
+                "frameworks": "Frameworks",
+                "stateManagement": "State Management",
+                "languages": "Languages",
+                "effects": "Effects",
+                "packagingTools": "Packaging Tools",
+                "standards": "Standards",
+                "ai": "AI",
+                "other": "Other"
             }
         }
     },

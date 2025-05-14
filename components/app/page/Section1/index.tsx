@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { ThemeProvider } from '@/app/providers/ThemeProvider';
-import DinoGameComponent from '@/components/app/page/Section1/DinoGame';
 import LocaleSwitch from '@/components/app/page/Section1/LocaleSwitch';
-import LocalTime from '@/components/app/page/Section1/LocalTime';
 import Map from '@/components/app/page/Section1/Map';
 import Profile from '@/components/app/page/Section1/Profile';
 import Resume from '@/components/app/page/Section1/Resume';
 import ToggleTheme from '@/components/app/page/Section1/ToggleTheme';
 import Block from '@/components/Block';
+
+import DinoGameComponent from './DinoGame';
+import LocalTime from './LocalTime';
 
 export default function Section1(): React.ReactNode {
     return (
@@ -37,24 +37,22 @@ export default function Section1(): React.ReactNode {
                 <LocaleSwitch />
             </Block>
 
-            <ThemeProvider>
-                {/* Map */}
-                <Block
-                    column={'4 / span 2'}
-                    row={'2 / span 2'}
-                    noPadding
-                >
-                    <Map />
-                </Block>
+            {/* Map */}
+            <Block
+                column={'4 / span 2'}
+                row={'2 / span 2'}
+                noPadding
+            >
+                <Map />
+            </Block>
 
-                {/* Toggle Theme */}
-                <Block
-                    column={'6 / span 2'}
-                    row={'3 / span 1'}
-                >
-                    <ToggleTheme />
-                </Block>
-            </ThemeProvider>
+            {/* Toggle Theme */}
+            <Block
+                column={'6 / span 2'}
+                row={'3 / span 1'}
+            >
+                <ToggleTheme />
+            </Block>
 
             {/* Dino Game */}
             <Block

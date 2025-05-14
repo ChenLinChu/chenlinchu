@@ -22,6 +22,6 @@ export default function Map(): ReactNode {
                 height={1000}
                 priority
             />
-        </div>
+        </div >
     );
 }
