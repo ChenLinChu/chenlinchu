@@ -72,15 +72,12 @@ export const skillsData: SkillBlock[] = [
     {
         title: 'blockTitle.awsProducts',
         skills: [
-            { fileName: 'AWS WAF', isBlackIcon: false },
             { fileName: 'AWS CloudFront', isBlackIcon: false },
             { fileName: 'AWS S3', isBlackIcon: false },
             { fileName: 'AWS EC2', isBlackIcon: false },
-            { fileName: 'AWS RDS', isBlackIcon: false },
             { fileName: 'AWS Route53', isBlackIcon: false },
             { fileName: 'AWS IAM', isBlackIcon: false },
-            { fileName: 'NGINX', isBlackIcon: false },
-            { fileName: 'Ubuntu', isBlackIcon: false }
+            { fileName: 'NGINX', isBlackIcon: false }
         ]
     },
     {
