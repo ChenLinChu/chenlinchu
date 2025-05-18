@@ -48,7 +48,22 @@
                     "restart": "Restart"
                 },
                 "experience": {
-                    "title": "EXPERIENCE"
+                    "total_years": "{total_years} years",
+                    "title": "Experience",
+                    "positions": {
+                        "senior_frontend": "Senior Front-End Engineer",
+                        "rd_team_leader": "R&D Team Leader",
+                        "frontend": "Front-End Engineer",
+                        "assistant_frontend": "Assistant Front-End Engineer"
+                    },
+                    "companies": {
+                        "bravo_star": "Bravo Star International Co., Ltd.",
+                        "chung_yo": "Chung YO Internet Information Co., Ltd."
+                    },
+                    "dateFormat": {
+                        "present": "Present",
+                        "date": "{month}, {year}"
+                    }
                 }
             }
         },

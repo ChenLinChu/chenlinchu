@@ -48,7 +48,22 @@
                     "restart": "重新開始"
                 },
                 "experience": {
-                    "title": "經歷"
+                    "total_years": "{total_years} 年",
+                    "title": "經歷",
+                    "positions": {
+                        "senior_frontend": "資深前端工程師",
+                        "rd_team_leader": "研發組長",
+                        "frontend": "前端工程師",
+                        "assistant_frontend": "助理前端工程師"
+                    },
+                    "companies": {
+                        "bravo_star": "博凡星國際有限公司",
+                        "chung_yo": "中佑資訊有限公司"
+                    },
+                    "dateFormat": {
+                        "present": "現在",
+                        "date": "{year} 年 {month} 月"
+                    }
                 }
             }
         },
