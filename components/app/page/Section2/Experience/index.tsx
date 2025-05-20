@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
@@ -22,7 +23,10 @@ export default async function Experience(): Promise<React.ReactNode> {
     const total_years = calculateYearsSince('2020-09-07');
 
     return (
-        <div className={Styles.container}>
+        <Link
+            href="/experience"
+            className={Styles.container}
+        >
             <div className={Styles.total_years}>
                 {t('total_years', { total_years })}
             </div>
@@ -68,6 +72,6 @@ export default async function Experience(): Promise<React.ReactNode> {
                     </div>
                 ))}
             </div>
-        </div>
+        </Link>
     );
 }

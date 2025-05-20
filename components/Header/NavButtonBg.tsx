@@ -8,8 +8,9 @@ import Styles from './NavButtonBg.module.scss';
 
 const NAV_POSITIONS = {
     all: 'left-5px',
-    projects: 'left-165px',
-    contact: 'left-325px'
+    experience: 'left-165px',
+    projects: 'left-325px',
+    skills: 'left-485px'
 } as const;
 
 const getNavPositionClass = (
@@ -17,8 +18,9 @@ const getNavPositionClass = (
     locale: string
 ): string => {
     if (!pathname || pathname === `/${locale}`) return NAV_POSITIONS.all;
-    if (pathname === `/${locale}/projects`) return NAV_POSITIONS.projects;
-    return NAV_POSITIONS.contact;
+    else if (pathname === `/${locale}/experience`) return NAV_POSITIONS.experience;
+    else if (pathname === `/${locale}/projects`) return NAV_POSITIONS.projects;
+    else return NAV_POSITIONS.skills;
 };
 
 export default function NavButtonBg(): React.ReactNode {
