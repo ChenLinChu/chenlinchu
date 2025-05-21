@@ -1,5 +1,22 @@
 .block {
+    @media (max-width: 1199.99px) {
+        grid-row: var(--grid-row-xl);
+        grid-column: var(--grid-column-xl);
+    }
+
+    @media (max-width: 991.99px) {
+        grid-row: var(--grid-row-lg);
+        grid-column: var(--grid-column-lg);
+    }
+
+    @media (max-width: 767.99px) {
+        grid-row: var(--grid-row-md);
+        grid-column: var(--grid-column-md);
+    }
+
     display: flex;
+    grid-row: var(--grid-row-default);
+    grid-column: var(--grid-column-default);
     overflow: hidden;
     color: var(--color-text);
     font-size: 0.9rem;

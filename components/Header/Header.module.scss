@@ -16,6 +16,10 @@
     border-radius: 40px;
 
     &__button {
+        @media (max-width: 1199.99px) {
+            width: 15vw;
+        }
+
         position: relative;
         z-index: 2;
         width: 150px;

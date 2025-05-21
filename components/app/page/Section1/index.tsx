@@ -15,32 +15,64 @@ export default function Section1(): React.ReactNode {
         <>
             {/* Profile */}
             <Block
-                column={'1 / span 3'}
-                row={'1 / span 3'}
+                column={{
+                    default: '1 / span 3',
+                    xl: '1 / span 4',
+                    md: '1 / span 8'
+                }}
+                row={{
+                    default: '1 / span 3',
+                    xl: '1 / span 3',
+                    md: '1 / span 3'
+                }}
             >
                 <Profile />
             </Block>
 
             {/* Local Time */}
             <Block
-                column={'4 / span 3'}
-                row={'1 / span 1'}
+                column={{
+                    default: '4 / span 3',
+                    xl: '5 / span 3',
+                    md: '4 / span 5'
+                }}
+                row={{
+                    default: '1 / span 1',
+                    xl: '1 / span 1',
+                    md: '4 / span 1'
+                }}
             >
                 <LocalTime />
             </Block>
 
             {/* Locale Switch */}
             <Block
-                column={'7 / span 2'}
-                row={'1 / span 1'}
+                column={{
+                    default: '7 / span 2',
+                    xl: '7 / span 1',
+                    md: '1 / span 4'
+                }}
+                row={{
+                    default: '1 / span 1',
+                    xl: '1 / span 1',
+                    md: '5 / span 1'
+                }}
             >
                 <LocaleSwitch />
             </Block>
 
             {/* Map */}
             <Block
-                column={'4 / span 2'}
-                row={'2 / span 2'}
+                column={{
+                    default: '4 / span 2',
+                    xl: '4 / span 2',
+                    md: '5 / span 4'
+                }}
+                row={{
+                    default: '2 / span 2',
+                    xl: '2 / span 2',
+                    md: '5 / span 1'
+                }}
                 noPadding
             >
                 <Map />
@@ -48,25 +80,48 @@ export default function Section1(): React.ReactNode {
 
             {/* Toggle Theme */}
             <Block
-                column={'6 / span 2'}
-                row={'3 / span 1'}
+                column={{
+                    default: '6 / span 2',
+                    xl: '6 / span 2',
+                    md: '1 / span 3'
+                }}
+                row={{
+                    default: '3 / span 1',
+                    xl: '3 / span 1',
+                    md: '4 / span 1'
+                }}
             >
                 <ToggleTheme />
             </Block>
 
             {/* Dino Game */}
             <Block
-                column={'6 / span 3'}
-                row={'2 / span 1'}
-                noPadding
+                column={{
+                    default: '6 / span 3',
+                    xl: '6 / span 3',
+                    md: '1 / span 8'
+                }}
+                row={{
+                    default: '2 / span 1',
+                    xl: '2 / span 1',
+                    md: '6 / span 2'
+                }}
             >
                 <DinoGameComponent />
             </Block>
 
             {/* Resume */}
             <Block
-                column={'8 / span 1'}
-                row={'3 / span 1'}
+                column={{
+                    default: '8 / span 1',
+                    xl: '8 / span 1',
+                    md: '1 / span 2'
+                }}
+                row={{
+                    default: '3 / span 1',
+                    xl: '3 / span 1',
+                    md: '8 / span 1'
+                }}
             >
                 <Resume />
             </Block>

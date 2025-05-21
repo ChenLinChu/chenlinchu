@@ -13,32 +13,64 @@ export default function Section2(): React.ReactNode {
         <>
             {/* LinkedIn */}
             <Block
-                column={'1 / span 1'}
-                row={'4 / span 1'}
+                column={{
+                    default: '1 / span 1',
+                    xl: '1 / span 1',
+                    md: '3 / span 2'
+                }}
+                row={{
+                    default: '4 / span 1',
+                    xl: '4 / span 1',
+                    md: '8 / span 1'
+                }}
             >
                 <LinkedInIcon />
             </Block>
 
             {/* Email */}
             <Block
-                column={'1 / span 1'}
-                row={'5 / span 1'}
+                column={{
+                    default: '1 / span 1',
+                    xl: '1 / span 1',
+                    md: '5 / span 2'
+                }}
+                row={{
+                    default: '5 / span 1',
+                    xl: '5 / span 1',
+                    md: '8 / span 1'
+                }}
             >
                 <MailIcon />
             </Block>
 
             {/* GitHub */}
             <Block
-                column={'1 / span 1'}
-                row={'6 / span 1'}
+                column={{
+                    default: '1 / span 1',
+                    xl: '1 / span 1',
+                    md: '7 / span 2'
+                }}
+                row={{
+                    default: '6 / span 1',
+                    xl: '6 / span 1',
+                    md: '8 / span 1'
+                }}
             >
                 <GitHubIcon />
             </Block>
 
             {/* Skills Tree */}
             <Block
-                column={'2 / span 3'}
-                row={'4 / span 3'}
+                column={{
+                    default: '2 / span 3',
+                    xl: '2 / span 3',
+                    md: '1 / span 8'
+                }}
+                row={{
+                    default: '4 / span 3',
+                    xl: '4 / span 3',
+                    md: '9 / span 2'
+                }}
                 noPadding
             >
                 <SkillsTree />
@@ -46,8 +78,16 @@ export default function Section2(): React.ReactNode {
 
             {/* Career Experience */}
             <Block
-                column={'5 / span 4'}
-                row={'4 / span 4'}
+                column={{
+                    default: '5 / span 4',
+                    xl: '5 / span 4',
+                    md: '1 / span 8'
+                }}
+                row={{
+                    default: '4 / span 4',
+                    xl: '4 / span 4',
+                    md: '11 / span 4'
+                }}
             >
                 <Experience />
             </Block>
