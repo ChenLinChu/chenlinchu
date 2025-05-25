@@ -1,106 +1,104 @@
+import { getSkills, type Skill } from '@/lib/skills';
+
 export interface SkillBlock {
     title: string;
-    skills: {
-        fileName: string;
-        isBlackIcon: boolean;
-    }[];
+    skills: Skill[];
 }
 
 export const skillsData: SkillBlock[] = [
     {
         title: 'blockTitle.frameworks',
-        skills: [
-            { fileName: 'Next.js', isBlackIcon: true },
-            { fileName: 'React', isBlackIcon: false },
-            { fileName: 'Nuxt.js', isBlackIcon: false },
-            { fileName: 'Vue.js', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'Next',
+            'React',
+            'Nuxt',
+            'Vue'
+        ])
     },
     {
         title: 'blockTitle.stateManagement',
-        skills: [
-            { fileName: 'Pinia', isBlackIcon: false },
-            { fileName: 'Vuex', isBlackIcon: false },
-            { fileName: 'MobX', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'Pinia',
+            'Vuex',
+            'MobX'
+        ])
     },
     {
         title: 'blockTitle.languages',
-        skills: [
-            { fileName: 'TypeScript', isBlackIcon: false },
-            { fileName: 'JavaScript', isBlackIcon: false },
-            { fileName: 'Sass', isBlackIcon: false },
-            { fileName: 'Node.js', isBlackIcon: false },
-            { fileName: 'Python', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'TypeScript',
+            'JavaScript',
+            'Sass',
+            'Node',
+            'Python'
+        ])
     },
     {
         title: 'blockTitle.effects',
-        skills: [
-            { fileName: 'GSAP', isBlackIcon: true },
-            { fileName: 'PixiJS', isBlackIcon: false },
-            { fileName: 'Three.js', isBlackIcon: true }
-        ]
+        skills: getSkills([
+            'GSAP',
+            'PixiJS',
+            'Three'
+        ])
     },
     {
         title: 'blockTitle.packagingTools',
-        skills: [
-            { fileName: 'Turbopack', isBlackIcon: true },
-            { fileName: 'Vite', isBlackIcon: false },
-            { fileName: 'Webpack', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'Turbopack',
+            'Vite',
+            'Webpack'
+        ])
     },
     {
         title: 'blockTitle.googleProducts',
-        skills: [
-            { fileName: 'Google Tag Manager', isBlackIcon: false },
-            { fileName: 'Google Analytics', isBlackIcon: false },
-            { fileName: 'Google SEO', isBlackIcon: false },
-            { fileName: 'Google Lighthouse', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'Google Tag Manager',
+            'Google Analytics',
+            'Google SEO',
+            'Google Lighthouse'
+        ])
     },
     {
         title: 'blockTitle.standards',
-        skills: [
-            { fileName: 'ESLint', isBlackIcon: false },
-            { fileName: 'Stylelint', isBlackIcon: true },
-            { fileName: 'Prettier', isBlackIcon: false },
-            { fileName: 'SonarQube', isBlackIcon: false },
-            { fileName: 'Cypress', isBlackIcon: true }
-        ]
+        skills: getSkills([
+            'ESLint',
+            'Stylelint',
+            'Prettier',
+            'SonarQube',
+            'Cypress'
+        ])
     },
     {
         title: 'blockTitle.awsProducts',
-        skills: [
-            { fileName: 'AWS CloudFront', isBlackIcon: false },
-            { fileName: 'AWS S3', isBlackIcon: false },
-            { fileName: 'AWS EC2', isBlackIcon: false },
-            { fileName: 'AWS Route53', isBlackIcon: false },
-            { fileName: 'AWS IAM', isBlackIcon: false },
-            { fileName: 'NGINX', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'AWS CloudFront',
+            'AWS S3',
+            'AWS EC2',
+            'AWS Route53',
+            'AWS IAM',
+            'NGINX'
+        ])
     },
     {
         title: 'blockTitle.other',
-        skills: [
-            { fileName: 'Git', isBlackIcon: false },
-            { fileName: 'GitHub', isBlackIcon: true },
-            { fileName: 'GitLab', isBlackIcon: false },
-            { fileName: 'GitHub Actions', isBlackIcon: true },
-            { fileName: 'Vercel', isBlackIcon: true },
-            { fileName: 'Docker', isBlackIcon: false },
-            { fileName: 'Figma', isBlackIcon: false },
-            { fileName: 'Photoshop', isBlackIcon: false }
-        ]
+        skills: getSkills([
+            'Git',
+            'GitHub',
+            'GitLab',
+            'GitHub Actions',
+            'Vercel',
+            'Figma',
+            'Photoshop'
+        ])
     },
     {
         title: 'blockTitle.aiTools',
-        skills: [
-            { fileName: 'Cursor', isBlackIcon: true },
-            { fileName: 'GitHub Copilot', isBlackIcon: true },
-            { fileName: 'Claude', isBlackIcon: false },
-            { fileName: 'Grok', isBlackIcon: true },
-            { fileName: 'Gemini', isBlackIcon: true }
-        ]
+        skills: getSkills([
+            'Cursor',
+            'GitHub Copilot',
+            'Claude',
+            'Grok',
+            'Gemini'
+        ])
     }
 ];

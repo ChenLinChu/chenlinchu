@@ -19,7 +19,7 @@ const getNavPositionClass = (
 ): string => {
     if (!pathname || pathname === `/${locale}`) return NAV_POSITIONS.all;
     else if (pathname === `/${locale}/experience`) return NAV_POSITIONS.experience;
-    else if (pathname === `/${locale}/projects`) return NAV_POSITIONS.projects;
+    else if (pathname.includes(`/${locale}/project`)) return NAV_POSITIONS.projects;
     else return NAV_POSITIONS.skills;
 };
 

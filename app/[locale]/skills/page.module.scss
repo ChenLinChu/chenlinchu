@@ -1,0 +1,45 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 32px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.sectionTitle {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skillItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 16px;
+    color: var(--contrast-color);
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--brand-color);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.skillIcon {
+    padding: 3px;
+    background-color: #fff;
+    border-radius: 4px;
+}

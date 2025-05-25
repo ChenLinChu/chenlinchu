@@ -1,8 +1,9 @@
-import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
-import { experienceList } from './data';
+import { Link } from '@/i18n/navigation';
+import experience from '@/lib/experience';
+
 import Styles from './index.module.scss';
 
 function calculateYearsSince(startDate: string): number {
@@ -36,7 +37,7 @@ export default async function Experience(): Promise<React.ReactNode> {
             </div>
 
             <div className={Styles.experience_list}>
-                {experienceList.map((item, index) => (
+                {experience.map((item, index) => (
                     <div
                         key={index}
                         className={Styles.experience_item}

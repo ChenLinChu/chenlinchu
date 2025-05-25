@@ -1,47 +1,59 @@
-import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import { skillsData } from '@/components/app/skills/skillsData';
+import { Link } from '@/i18n/navigation';
 
-export default function SkillsPage(): React.ReactElement {
-    const t = useTranslations('main.skills');
+import Styles from './page.module.scss';
+
+const getContrastColor = (brandColor: string): string => {
+    const r = parseInt(brandColor.slice(1, 3), 16);
+    const g = parseInt(brandColor.slice(3, 5), 16);
+    const b = parseInt(brandColor.slice(5, 7), 16);
+
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+    return luminance > 0.5 ? '#000' : '#fff';
+};
+
+const rootStyles = (brandColor: string): { [key: string]: string } => ({
+    '--brand-color': brandColor,
+    '--contrast-color': getContrastColor(brandColor)
+});
+
+export default async function SkillsPage(): Promise<React.ReactElement> {
+    const t = await getTranslations('main.skills');
 
     return (
-        <main style={{ maxWidth: 800, margin: '0 auto', padding: 24 }}>
-            <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 32 }}>
-                {t('title')}
-            </h1>
-
+        <main className={Styles.container}>
             {skillsData.map((block) => (
                 <section
                     key={block.title}
-                    style={{ marginBottom: 32 }}
+                    className={Styles.section}
                 >
-                    <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 12 }}>
+                    <h2 className={Styles.sectionTitle}>
                         {t(block.title)}
                     </h2>
 
-                    <ul
-                        style={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            gap: 12,
-                            listStyle: 'none',
-                            padding: 0
-                        }}
-                    >
+                    <ul className={Styles.skillsList}>
                         {block.skills.map((skill) => (
                             <li
                                 key={skill.fileName}
-                                style={{
-                                    background: '#000',
-                                    borderRadius: 8,
-                                    padding: '8px 16px',
-                                    fontSize: 16,
-                                    fontWeight: 500
-                                }}
+                                className={Styles.skillItem}
+                                style={rootStyles(skill.brandColor)}
                             >
-                                {skill.fileName}
+                                <Link href={`/projects/${skill.fileName}`}>
+                                    <Image
+                                        className={Styles.skillIcon}
+                                        src={`/icons/${skill.fileName}.svg`}
+                                        alt={skill.fileName}
+                                        width={24}
+                                        height={24}
+                                    />
+
+                                    {skill.fileName}
+                                </Link>
                             </li>
                         ))}
                     </ul>

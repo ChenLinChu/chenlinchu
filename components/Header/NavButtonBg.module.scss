@@ -1,8 +1,4 @@
 .nav_button_bg {
-    @media (max-width: 1199.99px) {
-        width: 15vw;
-    }
-
     position: absolute;
     top: 10%;
     left: 5px;
@@ -12,6 +8,10 @@
     background-color: var(--header-nav-button-bg);
     border-radius: 40px;
     transition: left 0.1s linear;
+
+    @media (max-width: 1199.99px) {
+        width: 15vw;
+    }
 }
 
 .left-5px {
@@ -19,25 +19,25 @@
 }
 
 .left-165px {
+    left: 165px;
+
     @media (max-width: 1199.99px) {
         left: calc(15vw + 15px);
     }
-
-    left: 165px;
 }
 
 .left-325px {
+    left: 325px;
+
     @media (max-width: 1199.99px) {
         left: calc(30vw + 25px);
     }
-
-    left: 325px;
 }
 
 .left-485px {
+    left: 485px;
+
     @media (max-width: 1199.99px) {
         left: calc(45vw + 35px);
     }
-
-    left: 485px;
 }

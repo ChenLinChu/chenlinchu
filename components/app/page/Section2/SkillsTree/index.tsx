@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { skillsData } from '@/components/app/skills/skillsData';
+import { Link } from '@/i18n/navigation';
 
 import Styles from './index.module.scss';
 

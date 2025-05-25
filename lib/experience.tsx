@@ -1,4 +1,4 @@
-export const experienceList = [
+const experience = [
     {
         company: 'bravo_star',
         position: 'senior_frontend',
@@ -48,3 +48,5 @@ export const experienceList = [
         }
     }
 ];
+
+export default experience;

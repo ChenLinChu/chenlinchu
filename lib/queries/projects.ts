@@ -1,19 +1,5 @@
 import { sql } from '@/lib/db';
-
-interface Project {
-    id: number;
-    cover_image_url: string;
-    title: string;
-    subtitle: string;
-    external_link: string;
-    tags: string[];
-    content?: string;
-    seo_description?: string;
-    seo_keywords?: string[];
-    seo_title?: string;
-    seo_slug?: string;
-    seo_og_image?: string;
-}
+import type { Project } from '@/types/project';
 
 export async function getProjectsByLanguage(
     language: string,
@@ -22,7 +8,7 @@ export async function getProjectsByLanguage(
 ): Promise<Project[]> {
     try {
         const projects = await sql`
-            SELECT cover_image_url, title, subtitle, external_link, tags
+            SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug
             FROM projects
             WHERE language = ${language}
             ORDER BY created_at DESC
@@ -37,8 +23,29 @@ export async function getProjectsByLanguage(
     }
 }
 
-export async function getProjectByIdAndLanguage(
-    id: number,
+export async function getProjectsByTagAndLanguage(
+    tag: string,
+    language: string
+): Promise<Project[]> {
+    try {
+        const projects = await sql`
+            SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug
+            FROM projects
+            WHERE ${decodeURIComponent(tag)} = ANY(tags)
+            AND language = ${language}
+            ORDER BY created_at DESC
+        `;
+
+        return projects as Project[];
+    } catch (error) {
+        console.error('Failed to fetch projects:', error);
+
+        return [];
+    }
+}
+
+export async function getProjectBySlugAndLanguage(
+    slug: string,
     language: string
 ): Promise<Project | null> {
     try {
@@ -51,11 +58,9 @@ export async function getProjectByIdAndLanguage(
                 content,
                 seo_description,
                 seo_keywords,
-                seo_title,
-                seo_slug,
-                seo_og_image
+                seo_slug
             FROM projects
-            WHERE id = ${id}
+            WHERE seo_slug = ${slug}
             AND language = ${language}
         `;
 

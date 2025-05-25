@@ -42,7 +42,7 @@ export default async function Header(): Promise<React.ReactNode> {
                     className={Styles['nav__button']}
                     href="/projects"
                     aria-current={
-                        pathname === `/${locale}/projects` ? 'page' : undefined
+                        pathname?.includes(`/${locale}/project`) ? 'page' : undefined
                     }
                 >
                     {t('projects')}

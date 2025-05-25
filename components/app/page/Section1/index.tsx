@@ -5,7 +5,7 @@ import Map from '@/components/app/page/Section1/Map';
 import Profile from '@/components/app/page/Section1/Profile';
 import Resume from '@/components/app/page/Section1/Resume';
 import ToggleTheme from '@/components/app/page/Section1/ToggleTheme';
-import Block from '@/components/Block';
+import Block from '@/components/shared/Block';
 
 import DinoGameComponent from './DinoGame';
 import LocalTime from './LocalTime';

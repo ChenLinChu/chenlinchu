@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Block from '@/components/Block';
+import Block from '@/components/shared/Block';
+import ProjectContainer from '@/components/shared/ProjectContainer';
 import { getProjectsByLanguage } from '@/lib/queries/projects';
 
 export default async function SectionProjects(
@@ -25,10 +26,7 @@ export default async function SectionProjects(
                         md: `${15 + index * 4} / span 4`
                     }}
                 >
-                    <div key={index}>
-                        <h2>{project.title}</h2>
-                        <p>{project.tags}</p>
-                    </div>
+                    <ProjectContainer project={project} />
                 </Block>
             ))}
         </>

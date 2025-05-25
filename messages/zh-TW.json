@@ -65,11 +65,13 @@
                         "present": "現在",
                         "date": "{year} 年 {month} 月"
                     }
+                },
+                "projects": {
+                    "buildAt": "開發於 {company}"
                 }
             }
         },
         "skills": {
-            "title": "目前使用",
             "blockTitle": {
                 "frameworks": "框架",
                 "stateManagement": "狀態管理",
@@ -82,6 +84,9 @@
                 "other": "其他",
                 "aiTools": "AI 工具"
             }
+        },
+        "projects/[tag]": {
+            "title": "此頁面使用到技術"
         }
     },
     "footer": {

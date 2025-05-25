@@ -10,7 +10,8 @@
         "neondatabase",
         "Nuxt",
         "Pixi",
-        "Qube"
+        "Qube",
+        "Vuetify"
     ],
     "ignoreWords": [],
     "import": []
