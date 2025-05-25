@@ -17,13 +17,13 @@ export default function Section1(): React.ReactNode {
             <Block
                 column={{
                     default: '1 / span 3',
-                    xl: '1 / span 4',
-                    md: '1 / span 8'
+                    xl: '1 / span 3',
+                    lg: '1 / span 8'
                 }}
                 row={{
                     default: '1 / span 3',
                     xl: '1 / span 3',
-                    md: '1 / span 3'
+                    lg: '1 / span 3'
                 }}
             >
                 <Profile />
@@ -33,13 +33,13 @@ export default function Section1(): React.ReactNode {
             <Block
                 column={{
                     default: '4 / span 3',
-                    xl: '5 / span 3',
-                    md: '4 / span 5'
+                    xl: '4 / span 3',
+                    lg: '4 / span 5'
                 }}
                 row={{
                     default: '1 / span 1',
                     xl: '1 / span 1',
-                    md: '4 / span 1'
+                    lg: '4 / span 1'
                 }}
             >
                 <LocalTime />
@@ -49,13 +49,13 @@ export default function Section1(): React.ReactNode {
             <Block
                 column={{
                     default: '7 / span 2',
-                    xl: '7 / span 1',
-                    md: '1 / span 4'
+                    xl: '7 / span 2',
+                    lg: '1 / span 4'
                 }}
                 row={{
                     default: '1 / span 1',
                     xl: '1 / span 1',
-                    md: '5 / span 1'
+                    lg: '5 / span 1'
                 }}
             >
                 <LocaleSwitch />
@@ -66,12 +66,12 @@ export default function Section1(): React.ReactNode {
                 column={{
                     default: '4 / span 2',
                     xl: '4 / span 2',
-                    md: '5 / span 4'
+                    lg: '5 / span 4'
                 }}
                 row={{
                     default: '2 / span 2',
                     xl: '2 / span 2',
-                    md: '5 / span 1'
+                    lg: '5 / span 1'
                 }}
                 noPadding
             >
@@ -83,12 +83,12 @@ export default function Section1(): React.ReactNode {
                 column={{
                     default: '6 / span 2',
                     xl: '6 / span 2',
-                    md: '1 / span 3'
+                    lg: '1 / span 3'
                 }}
                 row={{
                     default: '3 / span 1',
                     xl: '3 / span 1',
-                    md: '4 / span 1'
+                    lg: '4 / span 1'
                 }}
             >
                 <ToggleTheme />
@@ -99,12 +99,12 @@ export default function Section1(): React.ReactNode {
                 column={{
                     default: '6 / span 3',
                     xl: '6 / span 3',
-                    md: '1 / span 8'
+                    lg: '1 / span 8'
                 }}
                 row={{
                     default: '2 / span 1',
                     xl: '2 / span 1',
-                    md: '6 / span 2'
+                    lg: '6 / span 2'
                 }}
             >
                 <DinoGameComponent />
@@ -115,12 +115,12 @@ export default function Section1(): React.ReactNode {
                 column={{
                     default: '8 / span 1',
                     xl: '8 / span 1',
-                    md: '1 / span 2'
+                    lg: '1 / span 2'
                 }}
                 row={{
                     default: '3 / span 1',
                     xl: '3 / span 1',
-                    md: '8 / span 1'
+                    lg: '8 / span 1'
                 }}
             >
                 <Resume />

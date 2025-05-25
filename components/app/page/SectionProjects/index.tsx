@@ -18,12 +18,12 @@ export default async function SectionProjects(
                     column={{
                         default: `${index % 2 === 0 ? 1 : 5} / span 4`,
                         xl: `${index % 2 === 0 ? 1 : 5} / span 4`,
-                        md: '1 / span 8'
+                        lg: '1 / span 8'
                     }}
                     row={{
                         default: `${7 + Math.floor(index / 2) * 4 + (index % 2)} / span 4`,
                         xl: `${7 + Math.floor(index / 2) * 4 + (index % 2)} / span 4`,
-                        md: `${15 + index * 4} / span 4`
+                        lg: `${15 + index * 4} / span 4`
                     }}
                 >
                     <ProjectContainer project={project} />
