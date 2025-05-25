@@ -77,15 +77,16 @@
 
         .tag {
             padding: 2px 8px;
-            color: var(--contrast-color);
+            color: var(--color-text);
             font-size: 0.8rem;
-            background-color: var(--brand-color);
+            text-decoration: none;
+            background-color: var(--block-title);
             border-radius: 10px;
             cursor: pointer;
         }
 
         .more {
-            color: var(--block-title);
+            color: var(--color-text);
         }
 
         .buildAt {

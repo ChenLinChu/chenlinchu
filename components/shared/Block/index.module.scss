@@ -11,18 +11,18 @@
     transition: background-color 0.2s ease;
 
     @media (max-width: 1199.99px) {
-        grid-row: var(--grid-row-xl);
-        grid-column: var(--grid-column-xl);
+        grid-row: var(--grid-row-xl, var(--grid-row-default));
+        grid-column: var(--grid-column-xl, var(--grid-column-default));
     }
 
     @media (max-width: 991.99px) {
-        grid-row: var(--grid-row-lg);
-        grid-column: var(--grid-column-lg);
+        grid-row: var(--grid-row-lg, var(--grid-row-xl, var(--grid-row-default)));
+        grid-column: var(--grid-column-lg, var(--grid-column-xl, var(--grid-column-default)));
     }
 
     @media (max-width: 767.99px) {
-        grid-row: var(--grid-row-md);
-        grid-column: var(--grid-column-md);
+        grid-row: var(--grid-row-md, var(--grid-row-lg, var(--grid-row-xl, var(--grid-row-default))));
+        grid-column: var(--grid-column-md, var(--grid-column-lg, var(--grid-column-xl, var(--grid-column-default))));
     }
 
     &:hover {

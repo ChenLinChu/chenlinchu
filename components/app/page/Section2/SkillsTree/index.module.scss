@@ -38,6 +38,7 @@
     flex-direction: column;
     width: 100%;
     animation: vertical-scroll 63s linear infinite;
+    will-change: transform;
 }
 
 .block__title {

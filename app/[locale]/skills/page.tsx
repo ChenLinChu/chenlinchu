@@ -29,8 +29,8 @@ export default async function SkillsPage(): Promise<React.ReactElement> {
         <main className={Styles.container}>
             {skillsData.map((block) => (
                 <section
-                    key={block.title}
                     className={Styles.section}
+                    key={block.title}
                 >
                     <h2 className={Styles.sectionTitle}>
                         {t(block.title)}
@@ -39,11 +39,14 @@ export default async function SkillsPage(): Promise<React.ReactElement> {
                     <ul className={Styles.skillsList}>
                         {block.skills.map((skill) => (
                             <li
-                                key={skill.fileName}
                                 className={Styles.skillItem}
+                                key={skill.fileName}
                                 style={rootStyles(skill.brandColor)}
                             >
-                                <Link href={`/projects/${skill.fileName}`}>
+                                <Link
+                                    className={Styles.skillLink}
+                                    href={`/projects/${skill.fileName}`}
+                                >
                                     <Image
                                         className={Styles.skillIcon}
                                         src={`/icons/${skill.fileName}.svg`}

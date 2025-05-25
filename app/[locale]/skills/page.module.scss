@@ -3,12 +3,6 @@
     margin: 0 auto;
 }
 
-.title {
-    margin-bottom: 32px;
-    font-size: 32px;
-    font-weight: 700;
-}
-
 .sectionTitle {
     margin: 20px 0;
     font-size: 24px;
@@ -22,20 +16,25 @@
 }
 
 .skillItem {
-    display: flex;
-    gap: 8px;
-    align-items: center;
     padding: 8px 16px;
-    color: var(--contrast-color);
     font-size: 16px;
     font-weight: 500;
     background: var(--brand-color);
     border-radius: 8px;
+    list-style: none;
     cursor: pointer;
 
     &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
     }
+}
+
+.skillLink {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--contrast-color);
+    text-decoration: none;
 }
 
 .skillIcon {
