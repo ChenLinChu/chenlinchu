@@ -92,22 +92,26 @@
             "content": {
                 "bravo_star_senior_frontend": [
                     {
-                        "title": "Platform Refactoring and Performance Improvement",
+                        "title": "Platform Refactoring and Performance Enhancement",
                         "list": [
-                            "Lead the migration of the platform architecture from Next.js to Nuxt.js.",
-                            "Implement SSR (Server-Side Rendering) correctly to double the platform loading and execution performance."
+                            "Led the comprehensive migration of the original Next.js-based platform architecture to Nuxt.js, optimizing the overall structure.",
+                            "Clearly differentiated SSR (Server-Side Rendering) and CSR (Client-Side Rendering) development models, improving platform loading and execution performance by approximately twofold.",
+                            "Developed scripts to automatically link routes and component files, reducing the size of packaged files across platforms by about 50%.",
+                            "Implemented gzip compression, significantly boosting project loading speed by approximately 40%.",
+                            "Optimized language file compression and introduced on-demand loading, enhancing project loading speed by about fivefold."
                         ]
                     },
                     {
                         "title": "Deployment and Collaboration Process Establishment",
                         "list": [
-                            "Write automated deployment scripts and coordinate with the SRE team to execute deployment testing and deployment process."
+                            "Designed project deployment workflows and collaborated with the SRE team to execute deployment testing and production rollouts.",
+                            "Introduced ESLint and Stylelint as frontend development standards, greatly improving team consistency and collaboration efficiency."
                         ]
                     },
                     {
-                        "title": "Daily Operation and Exception Handling",
+                        "title": "Daily Operations and Incident Management",
                         "list": [
-                            "Responsible for real-time troubleshooting and incident response for all services."
+                            "During on-call shifts, responsible for real-time troubleshooting and resolution of platform issues, ensuring system stability."
                         ]
                     }
                 ],
