@@ -50,21 +50,7 @@
                 },
                 "experience": {
                     "total_years": "{total_years} 年",
-                    "title": "經歷",
-                    "positions": {
-                        "senior_frontend": "資深前端工程師",
-                        "rd_team_leader": "研發組長",
-                        "frontend": "前端工程師",
-                        "assistant_frontend": "助理前端工程師"
-                    },
-                    "companies": {
-                        "bravo_star": "博凡星國際有限公司",
-                        "chung_yo": "中佑資訊有限公司"
-                    },
-                    "dateFormat": {
-                        "present": "現在",
-                        "date": "{year} 年 {month} 月"
-                    }
+                    "title": "經歷"
                 },
                 "projects": {
                     "buildAt": "開發於 {company}"
@@ -87,6 +73,98 @@
         },
         "projects/[tag]": {
             "title": "此頁面使用到技術"
+        },
+        "experience": {
+            "positions": {
+                "senior_frontend": "資深前端工程師",
+                "rd_team_leader": "研發組組長",
+                "frontend": "前端工程師",
+                "assistant_frontend": "助理前端工程師"
+            },
+            "companies": {
+                "bravo_star": "博凡星國際有限公司",
+                "chung_yo": "中佑資訊有限公司"
+            },
+            "dateFormat": {
+                "present": "現在",
+                "date": "{year} 年 {month} 月"
+            },
+            "content": {
+                "bravo_star_senior_frontend": [
+                    {
+                        "title": "平台重構與效能提升",
+                        "list": [
+                            "主導將原本基於 Next.js 的平台架構，完整遷移至 Nuxt.js 架構。",
+                            "採用正確的 SSR（伺服器端渲染）實作方式，將平台載入與執行效能提升約兩倍。"
+                        ]
+                    },
+                    {
+                        "title": "部署與協作流程建立",
+                        "list": [
+                            "撰寫自動化部署腳本，並協同 SRE 團隊執行部署測試與上線流程。",
+                            "導入 ESLint、Stylelint 等前端開發規範，提升團隊開發一致性與協作效率。"
+                        ]
+                    },
+                    {
+                        "title": "日常維運與異常處理",
+                        "list": [
+                            "值班期間負責平台異常狀況的即時排查與修復，確保系統穩定運行。"
+                        ]
+                    }
+                ],
+                "chung_yo_rd_team_leader": [
+                    {
+                        "title": "管理面",
+                        "list": [
+                            "24/7 On-call 待命，負責所有服務之異常狀況即時排除與應變處理。",
+                            "管理前後端工程師共 8 人，協助排程、技術指導與進度控管。",
+                            "負責管理 AWS 雲端環境共計 10 個專案，涵蓋前後端與資料處理流程。",
+                            "管理 GitHub 組織內約 300 個專案，維護專案架構與版本控制流程。"
+                        ]
+                    },
+                    {
+                        "title": "執行面",
+                        "list": [
+                            "主導 Vue 3 專案建置與 AWS 雲端環境架設，單一 GA 事件數據處理突破億級規模。",
+                            "主導 Nuxt 3 專案之前端與雲端機器環境優化，成功降低機器記憶體使用量約 10%。",
+                            "負責 Three.js 專案效能優化，並與伺服器團隊協作完成新機器部署與上線。",
+                            "優化 Python 爬蟲專案，提高穩定性並顯著降低錯誤發生頻率。"
+                        ]
+                    }
+                ],
+                "chung_yo_frontend": [
+                    {
+                        "title": "技術主導與架構升級",
+                        "list": [
+                            "主導專案環境升級：從 Vue 2 遷移至 Vue 3 + TypeScript，並負責後續測試與部署上線流程。",
+                            "導入 git-cz 套件，優化團隊 Commit 格式與易讀性。"
+                        ]
+                    },
+                    {
+                        "title": "工具開發與內部效率提升",
+                        "list": [
+                            "自行開發多項內部工具，包括圖片壓縮、尺寸調整、色碼選擇、資料夾整理、素材批次上傳及簡易爬蟲工具，有效協助設計與行銷部門提升效率。",
+                            "統籌並優化部門內表單與流程資料，促進跨部門協作與資訊整合。"
+                        ]
+                    },
+                    {
+                        "title": "跨部門協調與管理支援",
+                        "list": [
+                            "主動暫代主管職務，協助規劃與溝通需求，協調工程、企劃與設計部門，確保專案執行順利。",
+                            "負責需求與問題管理，作為多部門溝通橋樑，提升整體執行效率與協作品質。"
+                        ]
+                    }
+                ],
+                "chung_yo_assistant_frontend": [
+                    {
+                        "title": "前端開發與動畫特效",
+                        "list": [
+                            "參與並完成約 50 件動態網頁開發案件，應用 GSAP、PixiJS、SCSS 增強使用者互動與動畫體驗。",
+                            "開發網頁圖片預載入功能，改善載入體驗並降低跳動情形。"
+                        ]
+                    }
+                ]
+            }
         }
     },
     "footer": {

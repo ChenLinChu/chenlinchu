@@ -19,10 +19,12 @@ html {
 }
 
 body {
+    min-height: 100vh;
     color: var(--color-text);
     font-family: Inter, sans-serif;
     background-color: var(--color-bg);
     background-image: var(--bg-image-path);
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     transition: background-image 0.3s linear, color 0.1s linear;
 }

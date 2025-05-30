@@ -19,7 +19,8 @@ function calculateYearsSince(startDate: string): number {
 }
 
 export default async function Experience(): Promise<React.ReactNode> {
-    const t = await getTranslations('main.page.block.experience');
+    const t = await getTranslations('main.experience');
+    const tForBlock = await getTranslations('main.page.block.experience');
 
     const total_years = calculateYearsSince('2020-09-07');
 
@@ -29,11 +30,11 @@ export default async function Experience(): Promise<React.ReactNode> {
             className={Styles.container}
         >
             <div className={Styles.total_years}>
-                {t('total_years', { total_years })}
+                {tForBlock('total_years', { total_years })}
             </div>
 
             <div className={Styles.title}>
-                {t('title')}
+                {tForBlock('title')}
             </div>
 
             <div className={Styles.experience_list}>

@@ -50,21 +50,7 @@
                 },
                 "experience": {
                     "total_years": "{total_years} years",
-                    "title": "Experience",
-                    "positions": {
-                        "senior_frontend": "Senior Front-End Engineer",
-                        "rd_team_leader": "R&D Team Leader",
-                        "frontend": "Front-End Engineer",
-                        "assistant_frontend": "Assistant Front-End Engineer"
-                    },
-                    "companies": {
-                        "bravo_star": "Bravo Star International Co., Ltd.",
-                        "chung_yo": "Chung YO Internet Information Co., Ltd."
-                    },
-                    "dateFormat": {
-                        "present": "Present",
-                        "date": "{month}, {year}"
-                    }
+                    "title": "Experience"
                 },
                 "projects": {
                     "buildAt": "Build At {company}"
@@ -87,6 +73,97 @@
         },
         "projects/[tag]": {
             "title": "This page uses the following technologies"
+        },
+        "experience": {
+            "positions": {
+                "senior_frontend": "Senior Front-End Engineer",
+                "rd_team_leader": "R&D Team Leader",
+                "frontend": "Front-End Engineer",
+                "assistant_frontend": "Assistant Front-End Engineer"
+            },
+            "companies": {
+                "bravo_star": "Bravo Star International Co., Ltd.",
+                "chung_yo": "Chung YO Internet Information Co., Ltd."
+            },
+            "dateFormat": {
+                "present": "Present",
+                "date": "{month}, {year}"
+            },
+            "content": {
+                "bravo_star_senior_frontend": [
+                    {
+                        "title": "Platform Refactoring and Performance Improvement",
+                        "list": [
+                            "Lead the migration of the platform architecture from Next.js to Nuxt.js.",
+                            "Implement SSR (Server-Side Rendering) correctly to double the platform loading and execution performance."
+                        ]
+                    },
+                    {
+                        "title": "Deployment and Collaboration Process Establishment",
+                        "list": [
+                            "Write automated deployment scripts and coordinate with the SRE team to execute deployment testing and deployment process."
+                        ]
+                    },
+                    {
+                        "title": "Daily Operation and Exception Handling",
+                        "list": [
+                            "Responsible for real-time troubleshooting and incident response for all services."
+                        ]
+                    }
+                ],
+                "chung_yo_rd_team_leader": [
+                    {
+                        "title": "Management",
+                        "list": [
+                            "24/7 On-call standby, responsible for real-time troubleshooting and incident response for all services.",
+                            "Managed 8 front-end and back-end engineers, assisting with scheduling, technical guidance, and progress control.",
+                            "Managed 10 AWS cloud environment projects, covering front-end and back-end processes and data processing.",
+                            "Managed approximately 300 projects within the GitHub organization, maintaining project architecture and version control processes."
+                        ]
+                    },
+                    {
+                        "title": "Execution",
+                        "list": [
+                            "Lead the Vue 3 project setup and AWS cloud environment setup, processing single GA event data in the scale of billions.",
+                            "Lead the Nuxt 3 project's front-end and cloud machine environment optimization, successfully reducing machine memory usage by approximately 10%.",
+                            "Responsible for the Three.js project performance optimization, and collaborated with the server team to complete the new machine deployment and deployment.",
+                            "Optimized the Python crawler project, improving stability and significantly reducing error frequency."
+                        ]
+                    }
+                ],
+                "chung_yo_frontend": [
+                    {
+                        "title": "Technical Leadership and Architecture Upgrade",
+                        "list": [
+                            "Lead the project environment upgrade: migrate from Vue 2 to Vue 3 + TypeScript, and be responsible for the subsequent testing and deployment process.",
+                            "Introduce git-cz package to optimize team commit format and readability."
+                        ]
+                    },
+                    {
+                        "title": "Tool Development and Internal Efficiency Improvement",
+                        "list": [
+                            "Developed multiple internal tools, including image compression, size adjustment, color code selection, folder organization, batch upload of materials, and simple crawler tools, effectively helping design and marketing departments improve efficiency.",
+                            "Managed and optimized form and process data within the department, promoting cross-department collaboration and information integration."
+                        ]
+                    },
+                    {
+                        "title": "Cross-Department Coordination and Management Support",
+                        "list": [
+                            "Actively temporarily assume the role of supervisor, assist in planning and communication needs, coordinate engineering, planning, and design departments to ensure project execution.",
+                            "Responsible for demand and problem management, acting as a communication bridge between multiple departments to improve overall execution efficiency and collaboration quality."
+                        ]
+                    }
+                ],
+                "chung_yo_assistant_frontend": [
+                    {
+                        "title": "Front-End Development and Animation Effects",
+                        "list": [
+                            "Participated in and completed approximately 50 dynamic web development cases, applying GSAP, PixiJS, and SCSS to enhance user interaction and animation experience.",
+                            "Developed web page image preload functionality to improve loading experience and reduce jumping."
+                        ]
+                    }
+                ]
+            }
         }
     },
     "footer": {

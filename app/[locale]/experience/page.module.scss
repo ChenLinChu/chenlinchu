@@ -1,0 +1,17 @@
+.experience_item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.experience_item_content {
+    margin: 2rem 0 5rem;
+
+    .experience_item_content_item {
+        margin-bottom: 2rem;
+
+        .experience_item_content_item_title {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
