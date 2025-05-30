@@ -44,7 +44,6 @@ export default async function Experience(): Promise<React.ReactNode> {
                                 })
                             }
                         </div>
-
                     </div>
 
                     <div className={Styles.experience_item_content}>
