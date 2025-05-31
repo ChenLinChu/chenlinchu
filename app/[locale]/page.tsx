@@ -8,15 +8,13 @@ import SectionProjects from '@/components/app/page/SectionProjects';
 
 import Styles from './page.module.scss';
 
-export async function generateMetadata(
-    { params }: { params: Promise<{ locale: string; }> }
-): Promise<Metadata> {
-    const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: 'metadata.page' });
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations('metadata.page');
 
     return {
         title: t('title'),
-        description: t('description')
+        description: t('description'),
+        keywords: t('keywords')
     };
 }
 

@@ -1,15 +1,11 @@
 import Image from 'next/image';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import Styles from './index.module.scss';
 
 export default async function Profile(): Promise<React.ReactNode> {
-    const locale = await getLocale();
-    const t = await getTranslations({
-        locale,
-        namespace: 'main.page.block.profile'
-    });
+    const t = await getTranslations('main.page.block.profile');
 
     return (
         <div className={Styles.profile}>

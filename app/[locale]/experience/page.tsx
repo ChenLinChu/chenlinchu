@@ -1,9 +1,20 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import experience from '@/lib/experience';
 
 import Styles from './page.module.scss';
+
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations('metadata.experience');
+
+    return {
+        title: t('title'),
+        description: t('description'),
+        keywords: t('keywords')
+    };
+}
 
 export default async function Experience(): Promise<React.ReactNode> {
     const t = await getTranslations('main.experience');

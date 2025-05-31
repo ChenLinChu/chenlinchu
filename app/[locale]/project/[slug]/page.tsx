@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 import Markdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
@@ -19,6 +21,25 @@ const getContrastColor = (brandColor: string): string => {
 
     return luminance > 0.5 ? '#000' : '#fff';
 };
+
+export async function generateMetadata(
+    { params }: { params: Promise<{ locale: string; slug: string; }> }
+): Promise<Metadata | undefined> {
+    const { locale, slug } = await params;
+    const project = await getProjectBySlugAndLanguage(slug, locale);
+
+    if (project) {
+        const t = await getTranslations('metadata.project/[slug]');
+
+        return {
+            title: t('title', { title: project.title }),
+            description: project.seo_description,
+            keywords: project.seo_keywords.join(locale === 'zh-TW' ? '、' : ', ')
+        };
+    }
+
+    return undefined;
+}
 
 export default async function Project(
     { params }: { params: Promise<{ locale: string; slug: string; }> }

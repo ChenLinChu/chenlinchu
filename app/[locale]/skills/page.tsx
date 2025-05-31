@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
@@ -21,6 +22,16 @@ const rootStyles = (brandColor: string): { [key: string]: string } => ({
     '--brand-color': brandColor,
     '--contrast-color': getContrastColor(brandColor)
 });
+
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations('metadata.skills');
+
+    return {
+        title: t('title'),
+        description: t('description'),
+        keywords: t('keywords')
+    };
+}
 
 export default async function SkillsPage(): Promise<React.ReactElement> {
     const t = await getTranslations('main.skills');

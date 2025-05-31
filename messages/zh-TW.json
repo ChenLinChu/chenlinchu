@@ -1,8 +1,27 @@
 {
     "metadata": {
         "page": {
-            "title": "朱晨霖 - 作品集",
-            "description": "朱晨霖的作品集"
+            "title": "朱晨霖 | 前端工程師",
+            "description": "專注於 React、Vue 及現代網頁技術的前端工程師。擅長效能優化、響應式設計及使用者體驗。",
+            "keywords": "前端工程師、React 開發、Vue 開發、網頁開發、效能優化、響應式設計、使用者體驗、TypeScript、JavaScript、Next.js、Nuxt.js"
+        },
+        "experience": {
+            "title": "工作經歷 | 前端工程師 - 朱晨霖",
+            "description": "資深前端工程師朱晨霖的工作經歷，包含博凡星國際與中佑資訊的專業經驗，專注於前端開發、團隊管理與技術架構優化。",
+            "keywords": "前端工程師、資深前端、研發組長、Next.js、React、Nuxt.js、Vue.js、TypeScript、AWS、團隊管理、技術架構、效能優化"
+        },
+        "project/[slug]": {
+            "title": "{title} | 前端工程師 - 朱晨霖"
+        },
+        "projects": {
+            "title": "專案作品 | 前端工程師 - 朱晨霖",
+            "description": "資深前端工程師朱晨霖的專案作品展示，包含前端框架、狀態管理、程式語言、動畫特效、打包工具、開發規範，以及 Google、AWS 等雲端服務的應用經驗。",
+            "keywords": "前端開發、{tags}、前端工程師技能"
+        },
+        "skills": {
+            "title": "專業技能 | 前端工程師 - 朱晨霖",
+            "description": "資深前端工程師朱晨霖的專業技能展示，包含前端框架、狀態管理、程式語言、動畫特效、打包工具、開發規範，以及 Google、AWS 等雲端服務的應用經驗。",
+            "keywords": "前端開發、Next.js、React、Nuxt.js、Vue.js、TypeScript、JavaScript、SCSS、GSAP、Three.js、Webpack、Vite、ESLint、Stylelint、Google Analytics、AWS、AI 工具、前端工程師技能"
         }
     },
     "header": {

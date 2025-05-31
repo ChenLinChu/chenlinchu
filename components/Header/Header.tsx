@@ -9,7 +9,7 @@ import NavButtonBg from './NavButtonBg';
 
 export default async function Header(): Promise<React.ReactNode> {
     const locale = await getLocale();
-    const t = await getTranslations({ locale, namespace: 'header' });
+    const t = await getTranslations('header');
     const headersList = await headers();
     const pathname = headersList.get('x-current-path');
 

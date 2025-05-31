@@ -1,8 +1,27 @@
 {
     "metadata": {
         "page": {
-            "title": "Chen Lin Chu - Portfolio",
-            "description": "Chen Lin Chu's portfolio"
+            "title": "Chen Lin Chu | Front-End Engineer",
+            "description": "Frontend engineer with expertise in React, Vue, and modern web technologies. Specializing in performance optimization, responsive design, and user experience.",
+            "keywords": "frontend engineer, react developer, vue developer, web development, performance optimization, responsive design, user experience, TypeScript, JavaScript, Next.js, Nuxt.js"
+        },
+        "experience": {
+            "title": "Work Experience | Front-End Engineer - Chen Lin Chu",
+            "description": "Senior Front-End Engineer Chen Lin Chu's professional experience at Bravo Star International and Chung YO Internet Information, focusing on front-end development, team management, and technical architecture optimization.",
+            "keywords": "Front-End Engineer, Senior Front-End, R&D Team Leader, Next.js, React, Nuxt.js, Vue.js, TypeScript, AWS, Team Management, Technical Architecture, Performance Optimization"
+        },
+        "project/[slug]": {
+            "title": "{title} | Front-End Engineer - Chen Lin Chu"
+        },
+        "projects": {
+            "title": "Projects | Front-End Engineer - Chen Lin Chu",
+            "description": "Senior Front-End Engineer Chen Lin Chu's project showcase, including front-end frameworks, state management, programming languages, animation effects, packaging tools, development standards, and experience with Google and AWS cloud services.",
+            "keywords": "Front-End Development, {tags}, Front-End Engineer Skills"
+        },
+        "skills": {
+            "title": "Professional Skills | Front-End Engineer - Chen Lin Chu",
+            "description": "Senior Front-End Engineer Chen Lin Chu's professional skills showcase, including front-end frameworks, state management, programming languages, animation effects, packaging tools, development standards, and experience with Google and AWS cloud services.",
+            "keywords": "Front-End Development, Next.js, React, Nuxt.js, Vue.js, TypeScript, JavaScript, SCSS, GSAP, Three.js, Webpack, Vite, ESLint, Stylelint, Google Analytics, AWS, AI Tools, Front-End Engineer Skills"
         }
     },
     "header": {
