@@ -12,7 +12,8 @@ export const skillsData: SkillBlock[] = [
             'Next',
             'React',
             'Nuxt',
-            'Vue'
+            'Vue',
+            'Laravel'
         ])
     },
     {
@@ -30,7 +31,8 @@ export const skillsData: SkillBlock[] = [
             'JavaScript',
             'Sass',
             'Node',
-            'Python'
+            'Python',
+            'PHP'
         ])
     },
     {
