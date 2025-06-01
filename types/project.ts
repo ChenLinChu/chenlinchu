@@ -1,5 +1,6 @@
 export interface Project {
     id: number;
+    language: string;
     cover_image_url: string;
     title: string;
     external_link: string;
