@@ -5,10 +5,9 @@
     "type": "module",
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build",
+        "build": "next-sitemap --config ./next-sitemap.config.ts && next build",
         "start": "next start",
-        "lint": "next lint",
-        "postbuild": "next-sitemap --config next-sitemap.config.ts"
+        "lint": "next lint"
     },
     "dependencies": {
         "@neondatabase/serverless": "^1.0.0",
