@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "postbuild": "next-sitemap --config next-sitemap.config.ts"
+        "postbuild": "tsx node_modules/.bin/next-sitemap --config next-sitemap.config.ts"
     },
     "dependencies": {
         "@neondatabase/serverless": "^1.0.0",
@@ -47,6 +47,7 @@
         "stylelint-order": "^7.0.0",
         "stylelint-scss": "^6.12.0",
         "stylelint-selector-bem-pattern": "^4.0.1",
+        "tsx": "^4.19.4",
         "typescript": "^5"
     }
 }
