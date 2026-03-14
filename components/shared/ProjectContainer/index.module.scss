@@ -77,12 +77,17 @@
 
         .tag {
             padding: 2px 8px;
-            color: var(--color-text);
+            color: var(--project-tag-text);
             font-size: 0.8rem;
             text-decoration: none;
-            background-color: var(--block-title);
+            background-color: var(--project-tag-bg);
             border-radius: 10px;
             cursor: pointer;
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 0.9;
+            }
         }
 
         .more {

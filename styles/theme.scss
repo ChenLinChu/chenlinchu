@@ -13,6 +13,8 @@ $color-gray: #a3a3a3;
     --block-icon-color: #cfd1d4;
     --block-icon-hover-color: #bbbdc0;
     --dino-game-button-bg: rgba(0 0 0 / 90%);
+    --project-tag-bg: #5a5a5a;
+    --project-tag-text: #fafafa;
 }
 
 [data-theme="light"] {
@@ -26,4 +28,6 @@ $color-gray: #a3a3a3;
     --block-icon-color: #4a4b4b;
     --block-icon-hover-color: #2a2b2b;
     --dino-game-button-bg: rgba(255 255 255 / 90%);
+    --project-tag-bg: #d4d4d4;
+    --project-tag-text: #1e1e1e;
 }
