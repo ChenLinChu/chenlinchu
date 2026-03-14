@@ -59,41 +59,41 @@ export default async function SkillsPage(
             />
             <h1 className={Styles.pageTitle}>{tBreadcrumb('skills')}</h1>
             <div className={Styles.grid}>
-            {skillsData.map((block) => (
-                <section
-                    className={Styles.section}
-                    key={block.title}
-                >
-                    <h2 className={Styles.sectionTitle}>
-                        {t(block.title)}
-                    </h2>
+                {skillsData.map((block) => (
+                    <section
+                        className={Styles.section}
+                        key={block.title}
+                    >
+                        <h2 className={Styles.sectionTitle}>
+                            {t(block.title)}
+                        </h2>
 
-                    <ul className={Styles.skillsList}>
-                        {block.skills.map((skill) => (
-                            <li
-                                className={Styles.skillItem}
-                                key={skill.fileName}
-                                style={rootStyles(skill.brandColor)}
-                            >
-                                <Link
-                                    className={Styles.skillLink}
-                                    href={`/projects/${skill.fileName}`}
+                        <ul className={Styles.skillsList}>
+                            {block.skills.map((skill) => (
+                                <li
+                                    className={Styles.skillItem}
+                                    key={skill.fileName}
+                                    style={rootStyles(skill.brandColor)}
                                 >
-                                    <Image
-                                        className={Styles.skillIcon}
-                                        src={`/icons/${skill.fileName}.svg`}
-                                        alt={skill.fileName}
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <Link
+                                        className={Styles.skillLink}
+                                        href={`/projects/${skill.fileName}`}
+                                    >
+                                        <Image
+                                            className={Styles.skillIcon}
+                                            src={`/icons/${skill.fileName}.svg`}
+                                            alt={skill.fileName}
+                                            width={24}
+                                            height={24}
+                                        />
 
-                                    {skill.fileName}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            ))}
+                                        {skill.fileName}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                ))}
             </div>
         </main>
     );
