@@ -19,10 +19,8 @@ export const metadata = {
         default: 'Chen Lin Chu | Front-End Engineer',
         template: '%s'
     },
-    description: `
-        Frontend engineer with expertise in React, Vue, and modern web technologies.
-        Specializing in performance optimization, responsive design, and user experience.
-    `
+    // eslint-disable-next-line max-len
+    description: 'Frontend engineer with expertise in React, Vue, and modern web technologies. Specializing in performance optimization, responsive design, and user experience.'
 };
 
 const inter = Inter({
