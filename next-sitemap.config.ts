@@ -37,42 +37,42 @@ const config: IConfig = {
                 ? new Date(siteLastmod[0].updated_at).toISOString()
                 : fallbackLastmod;
 
-        const tagsWithDate = await sql`
-            SELECT TRIM(tag) AS tag, MAX(updated_at)::text AS updated_at
+        const tagsWithDateByLocale = await sql`
+            SELECT language, TRIM(tag) AS tag, MAX(updated_at)::text AS updated_at
             FROM projects
             CROSS JOIN LATERAL UNNEST(tags) AS tag
-            WHERE language = 'zh-TW'
-            GROUP BY TRIM(tag)
-        ` as { tag: string; updated_at: string | null }[];
+            WHERE language IN ('zh-TW', 'en')
+            GROUP BY language, TRIM(tag)
+        ` as { language: string; tag: string; updated_at: string | null }[];
 
-        const tagToLastmod = Object.fromEntries(
-            tagsWithDate.map((row) => {
+        const tagToLastmodByLocale = Object.fromEntries(
+            tagsWithDateByLocale.map((row) => {
                 const date = row.updated_at ? new Date(row.updated_at) : null;
                 const validDate =
                     date && !Number.isNaN(date.getTime())
                         ? date.toISOString()
                         : mainPagesLastmod;
 
-                return [row.tag, validDate];
+                return [`${row.language}:${row.tag}`, validDate];
             })
         );
 
-        const slugsWithDate = await sql`
-            SELECT seo_slug, MAX(updated_at)::text AS updated_at
+        const slugsWithDateByLocale = await sql`
+            SELECT language, seo_slug, MAX(updated_at)::text AS updated_at
             FROM projects
-            WHERE language = 'zh-TW'
-            GROUP BY seo_slug
-        ` as { seo_slug: string; updated_at: string | null }[];
+            WHERE language IN ('zh-TW', 'en')
+            GROUP BY language, seo_slug
+        ` as { language: string; seo_slug: string; updated_at: string | null }[];
 
-        const slugToLastmod = Object.fromEntries(
-            slugsWithDate.map((row) => {
+        const slugToLastmodByLocale = Object.fromEntries(
+            slugsWithDateByLocale.map((row) => {
                 const date = row.updated_at ? new Date(row.updated_at) : null;
                 const validDate =
                     date && !Number.isNaN(date.getTime())
                         ? date.toISOString()
                         : fallbackLastmod;
 
-                return [row.seo_slug, validDate];
+                return [`${row.language}:${row.seo_slug}`, validDate];
             })
         );
 
@@ -86,23 +86,31 @@ const config: IConfig = {
                 });
             });
 
-            tagsWithDate.forEach((row) => {
-                result.push({
-                    loc: `/${locale}/projects/${row.tag}`,
-                    changefreq: 'daily' as const,
-                    priority: 0.8,
-                    lastmod: tagToLastmod[row.tag] ?? mainPagesLastmod
+            tagsWithDateByLocale
+                .filter((row) => row.language === locale)
+                .forEach((row) => {
+                    result.push({
+                        loc: `/${locale}/projects/${encodeURIComponent(row.tag)}`,
+                        changefreq: 'daily' as const,
+                        priority: 0.8,
+                        lastmod:
+                            tagToLastmodByLocale[`${locale}:${row.tag}`] ??
+                            mainPagesLastmod
+                    });
                 });
-            });
 
-            slugsWithDate.forEach((row) => {
-                result.push({
-                    loc: `/${locale}/project/${row.seo_slug}`,
-                    changefreq: 'daily' as const,
-                    priority: 0.8,
-                    lastmod: slugToLastmod[row.seo_slug] ?? fallbackLastmod
+            slugsWithDateByLocale
+                .filter((row) => row.language === locale)
+                .forEach((row) => {
+                    result.push({
+                        loc: `/${locale}/project/${row.seo_slug}`,
+                        changefreq: 'daily' as const,
+                        priority: 0.8,
+                        lastmod:
+                            slugToLastmodByLocale[`${locale}:${row.seo_slug}`] ??
+                            fallbackLastmod
+                    });
                 });
-            });
         });
 
         return result;
