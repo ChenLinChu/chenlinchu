@@ -14,7 +14,15 @@ import { ThemeProvider } from '../providers/ThemeProvider';
 import Styles from './layout.module.scss';
 
 export const metadata = {
-    metadataBase: getMetadataBase()
+    metadataBase: getMetadataBase(),
+    title: {
+        default: 'Chen Lin Chu | Front-End Engineer',
+        template: '%s'
+    },
+    description: `
+        Frontend engineer with expertise in React, Vue, and modern web technologies.
+        Specializing in performance optimization, responsive design, and user experience.
+    `
 };
 
 const inter = Inter({
