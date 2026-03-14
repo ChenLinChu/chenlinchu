@@ -35,76 +35,71 @@ export default async function Experience(
     ]);
 
     return (
-        <div>
+        <div className={Styles.wrapper}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
-            {experience.map((item, index) => (
-                <div
-                    className={Styles.experience_item_container}
-                    key={index}
-                >
-                    <div className={Styles.experience_item}>
-                        <div className={Styles.experience_item_position_company_container}>
-                            <h2 className={Styles.experience_item_position}>
-                                {t(`positions.${item.position}`)}
-                            </h2>
-
-                            <p className={Styles.experience_item_company}>
-                                {t(`companies.${item.company}`)}
-                            </p>
-                        </div>
-
-                        <div className={Styles.experience_item_date}>
-                            {t('dateFormat.date', {
-                                year: item.startDate.year,
-                                month: item.startDate.month
-                            })}
-
-                            <span className={Styles.experience_item_date_separator}>
-                                -
+            <div className={Styles.timeline}>
+                {experience.map((item, index) => (
+                    <article
+                        className={Styles.card}
+                        key={index}
+                    >
+                        <div className={Styles.cardHeader}>
+                            <div className={Styles.cardMeta}>
+                                <h2 className={Styles.position}>
+                                    {t(`positions.${item.position}`)}
+                                </h2>
+                                <p className={Styles.company}>
+                                    {t(`companies.${item.company}`)}
+                                </p>
+                            </div>
+                            <span className={Styles.dateBadge}>
+                                {t('dateFormat.date', {
+                                    year: item.startDate.year,
+                                    month: item.startDate.month
+                                })}
+                                <span className={Styles.dateSeparator}>–</span>
+                                {item.endDate.year === null
+                                    ? t('dateFormat.present')
+                                    : t('dateFormat.date', {
+                                        year: item.endDate.year,
+                                        month: item.endDate.month
+                                    })
+                                }
                             </span>
-
-                            {item.endDate.year === null
-                                ? t('dateFormat.present')
-                                : t('dateFormat.date', {
-                                    year: item.endDate.year,
-                                    month: item.endDate.month
-                                })
-                            }
                         </div>
-                    </div>
 
-                    <div className={Styles.experience_item_content}>
-                        {t.raw(`content.${item.company}_${item.position}`).map(
-                            (
-                                content: {
-                                    title: string;
-                                    list: string[]
-                                },
-                                contentIndex: number
-                            ) => (
-                                <div
-                                    key={contentIndex}
-                                    className={Styles.experience_item_content_item}
-                                >
-                                    <h3 className={Styles.experience_item_content_item_title}>
-                                        {content.title}
-                                    </h3>
-
-                                    <ul>
-                                        {content.list.map((listItem, listItemIndex) => (
-                                            <li key={listItemIndex}>
-                                                {listItem}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                    </div>
-                </div>
-            ))}
+                        <div className={Styles.cardContent}>
+                            {t.raw(`content.${item.company}_${item.position}`).map(
+                                (
+                                    content: {
+                                        title: string;
+                                        list: string[]
+                                    },
+                                    contentIndex: number
+                                ) => (
+                                    <section
+                                        key={contentIndex}
+                                        className={Styles.contentSection}
+                                    >
+                                        <h3 className={Styles.contentTitle}>
+                                            {content.title}
+                                        </h3>
+                                        <ul className={Styles.contentList}>
+                                            {content.list.map((listItem, listItemIndex) => (
+                                                <li key={listItemIndex}>
+                                                    {listItem}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </section>
+                                ))}
+                        </div>
+                    </article>
+                ))}
+            </div>
         </div>
     );
 }
