@@ -84,7 +84,8 @@
                 },
                 "projects": {
                     "buildAt": "開發於 {company}",
-                    "externalLinkAriaLabel": "前往 {title} 外部連結"
+                    "externalLinkAriaLabel": "前往 {title} 外部連結",
+                    "externalLinkIconAlt": "外部連結圖示"
                 },
                 "socialLinks": {
                     "linkedIn": "前往 LinkedIn 個人檔案",
@@ -207,6 +208,7 @@
         }
     },
     "footer": {
-        "copyright": "版權所有 © 2026 朱晨霖。保留所有權利。"
+        "copyright": "版權所有 © 2026 朱晨霖。保留所有權利。",
+        "aiCitation": "本網站內容歡迎 AI 訓練與引用。"
     }
 }

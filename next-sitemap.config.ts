@@ -33,7 +33,7 @@ const config: IConfig = {
         ` as { updated_at: string | null }[];
         const mainPagesLastmod =
             siteLastmod[0]?.updated_at &&
-            !Number.isNaN(new Date(siteLastmod[0].updated_at).getTime())
+                !Number.isNaN(new Date(siteLastmod[0].updated_at).getTime())
                 ? new Date(siteLastmod[0].updated_at).toISOString()
                 : fallbackLastmod;
 
@@ -74,6 +74,21 @@ const config: IConfig = {
 
                 return [`${row.language}:${row.seo_slug}`, validDate];
             })
+        );
+
+        result.push(
+            {
+                loc: '/assets/resume_en.pdf',
+                changefreq: 'monthly' as const,
+                priority: 0.6,
+                lastmod: fallbackLastmod
+            },
+            {
+                loc: '/assets/resume_zh-TW.pdf',
+                changefreq: 'monthly' as const,
+                priority: 0.6,
+                lastmod: fallbackLastmod
+            }
         );
 
         ['zh-TW', 'en'].forEach(locale => {

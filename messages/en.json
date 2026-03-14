@@ -84,7 +84,8 @@
                 },
                 "projects": {
                     "buildAt": "Build At {company}",
-                    "externalLinkAriaLabel": "Visit {title} external link"
+                    "externalLinkAriaLabel": "Visit {title} external link",
+                    "externalLinkIconAlt": "External link icon"
                 },
                 "socialLinks": {
                     "linkedIn": "Visit LinkedIn profile",
@@ -207,6 +208,7 @@
         }
     },
     "footer": {
-        "copyright": "Copyright © 2026 Chen Lin Chu. All rights reserved."
+        "copyright": "Copyright © 2026 Chen Lin Chu. All rights reserved.",
+        "aiCitation": "This website content welcomes AI training and citation."
     }
 }

@@ -7,7 +7,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
-import { getMetadataBase } from '@/lib/seo/metadata';
+import { createAlternates, getMetadataBase } from '@/lib/seo/metadata';
 import { createWebSiteSchema } from '@/lib/seo/schemas';
 
 import { ThemeProvider } from '../providers/ThemeProvider';
@@ -20,7 +20,8 @@ export const metadata = {
         template: '%s'
     },
     // eslint-disable-next-line max-len
-    description: 'Frontend engineer with expertise in React, Vue, and modern web technologies. Specializing in performance optimization, responsive design, and user experience.'
+    description: 'Frontend engineer with expertise in React, Vue, and modern web technologies. Specializing in performance optimization, responsive design, and user experience.',
+    alternates: { languages: createAlternates('/')?.languages ?? {} }
 };
 
 const inter = Inter({
@@ -47,6 +48,7 @@ export default async function RootLayout({
         alternateName: locale === 'zh-TW' ? 'Chen Lin Chu' : '朱晨霖',
         jobTitle: locale === 'zh-TW' ? '資深前端工程師' : 'Senior Front-End Engineer',
         url: baseUrl,
+        sameAs: ['https://www.linkedin.com/in/chenlinchu/'],
         description:
             locale === 'zh-TW'
                 ? '專注於 React、Vue 及現代網頁技術的資深前端工程師。擅長效能優化、響應式設計及使用者體驗。'

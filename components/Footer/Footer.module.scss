@@ -1,8 +1,18 @@
-.copyright {
+.wrapper {
     padding: 20px;
-    color: var(--color-text);
-    font-size: 0.9rem;
     text-align: center;
     border-top: 1px solid var(--color-text);
+}
+
+.copyright {
+    margin: 0 0 8px;
+    color: var(--color-text);
+    font-size: 0.9rem;
     opacity: 0.8;
+}
+
+.aiCitation {
+    color: var(--color-text);
+    font-size: 0.65rem;
+    opacity: 0.7;
 }

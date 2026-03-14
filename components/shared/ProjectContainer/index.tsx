@@ -49,7 +49,7 @@ export default async function ProjectContainer(
                             <Image
                                 className={Styles.externalLink}
                                 src={'/icons/External Link.svg'}
-                                alt=""
+                                alt={t('externalLinkIconAlt')}
                                 width={25}
                                 height={25}
                             />

@@ -28,7 +28,7 @@ export async function generateMetadata(
 
         return createSeoMetadata({
             locale,
-            path: `/projects/${decodedTag}`,
+            path: `/projects/${encodeURIComponent(decodedTag)}`,
             title: t('titleTag', { tag: decodedTag }),
             description: t('descriptionTag', { tag: decodedTag }),
             keywords
