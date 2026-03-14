@@ -23,7 +23,7 @@ export default async function SectionProjects(
                     row={{
                         default: `${7 + Math.floor(index / 2) * 4 + (index % 2)} / span 4`,
                         xl: `${7 + Math.floor(index / 2) * 4 + (index % 2)} / span 4`,
-                        lg: `${15 + index * 4} / span 4`
+                        lg: `${14 + index * 4} / span 4`
                     }}
                 >
                     <ProjectContainer project={project} />

@@ -7,8 +7,8 @@ import Resume from '@/components/app/page/Section1/Resume';
 import ToggleTheme from '@/components/app/page/Section1/ToggleTheme';
 import Block from '@/components/shared/Block';
 
-import DinoGameComponent from './DinoGame';
 import LocalTime from './LocalTime';
+import SpotifyNowPlaying from './SpotifyNowPlaying';
 
 export default function Section1(): React.ReactNode {
     return (
@@ -94,7 +94,7 @@ export default function Section1(): React.ReactNode {
                 <ToggleTheme />
             </Block>
 
-            {/* Dino Game */}
+            {/* Spotify Now Playing */}
             <Block
                 column={{
                     default: '6 / span 3',
@@ -104,10 +104,10 @@ export default function Section1(): React.ReactNode {
                 row={{
                     default: '2 / span 1',
                     xl: '2 / span 1',
-                    lg: '6 / span 2'
+                    lg: '6 / span 1'
                 }}
             >
-                <DinoGameComponent />
+                <SpotifyNowPlaying />
             </Block>
 
             {/* Resume */}
@@ -120,7 +120,7 @@ export default function Section1(): React.ReactNode {
                 row={{
                     default: '3 / span 1',
                     xl: '3 / span 1',
-                    lg: '8 / span 1'
+                    lg: '7 / span 1'
                 }}
             >
                 <Resume />

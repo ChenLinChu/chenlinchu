@@ -68,12 +68,11 @@
                         "text": "{theme} Mode"
                     }
                 },
-                "dinoGame": {
-                    "start": "Start Game",
-                    "gameOver": "Game Over",
-                    "score": "Score",
-                    "highScore": "High Score",
-                    "restart": "Restart"
+                "spotifyNowPlaying": {
+                    "title": "Now Playing",
+                    "recentlyPlayed": "Recently Played",
+                    "loading": "Loading...",
+                    "notPlaying": "Not playing anything"
                 },
                 "experience": {
                     "total_years": "{total_years} years",

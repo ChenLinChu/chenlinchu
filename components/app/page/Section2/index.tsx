@@ -21,7 +21,7 @@ export default function Section2(): React.ReactNode {
                 row={{
                     default: '4 / span 1',
                     xl: '4 / span 1',
-                    lg: '8 / span 1'
+                    lg: '7 / span 1'
                 }}
             >
                 <LinkedInIcon />
@@ -37,7 +37,7 @@ export default function Section2(): React.ReactNode {
                 row={{
                     default: '5 / span 1',
                     xl: '5 / span 1',
-                    lg: '8 / span 1'
+                    lg: '7 / span 1'
                 }}
             >
                 <MailIcon />
@@ -53,7 +53,7 @@ export default function Section2(): React.ReactNode {
                 row={{
                     default: '6 / span 1',
                     xl: '6 / span 1',
-                    lg: '8 / span 1'
+                    lg: '7 / span 1'
                 }}
             >
                 <GitHubIcon />
@@ -69,7 +69,7 @@ export default function Section2(): React.ReactNode {
                 row={{
                     default: '4 / span 3',
                     xl: '4 / span 3',
-                    lg: '9 / span 2'
+                    lg: '8 / span 2'
                 }}
                 noPadding
             >
@@ -86,7 +86,7 @@ export default function Section2(): React.ReactNode {
                 row={{
                     default: '4 / span 4',
                     xl: '4 / span 4',
-                    lg: '11 / span 4'
+                    lg: '10 / span 4'
                 }}
             >
                 <Experience />
