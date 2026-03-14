@@ -57,7 +57,8 @@
                     }
                 },
                 "resume": {
-                    "title": "RESUME"
+                    "title": "RESUME",
+                    "downloadAriaLabel": "Download resume PDF"
                 },
                 "toggleTheme": {
                     "title": "THEME",

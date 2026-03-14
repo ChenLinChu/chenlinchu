@@ -57,7 +57,8 @@
                     }
                 },
                 "resume": {
-                    "title": "履歷"
+                    "title": "履歷",
+                    "downloadAriaLabel": "下載履歷 PDF"
                 },
                 "toggleTheme": {
                     "title": "主題",
