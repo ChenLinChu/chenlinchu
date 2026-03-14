@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm';
 
 import { Link } from '@/i18n/navigation';
 import { getProjectBySlugAndLanguage } from '@/lib/queries/projects';
+import { createSeoMetadata, getMetadataBase } from '@/lib/seo/metadata';
 import { getSkills } from '@/lib/skills';
 
 import styles from './page.module.scss';
@@ -27,19 +28,24 @@ const getContrastColor = (brandColor: string): string => {
 };
 
 export async function generateMetadata(
-    { params }: { params: Promise<{ locale: string; slug: string; }> }
+    { params }: { params: Promise<{ locale: string; slug: string }> }
 ): Promise<Metadata | undefined> {
     const { locale, slug } = await params;
     const project = await getProject(slug, locale);
 
     if (project) {
         const t = await getTranslations('metadata.project/[slug]');
+        const title = t('title', { title: project.title });
+        const keywords = project.seo_keywords.join(locale === 'zh-TW' ? '、' : ', ');
 
-        return {
-            title: t('title', { title: project.title }),
+        return createSeoMetadata({
+            locale,
+            path: `/project/${slug}`,
+            title,
             description: project.seo_description,
-            keywords: project.seo_keywords.join(locale === 'zh-TW' ? '、' : ', ')
-        };
+            keywords,
+            image: project.cover_image_url
+        });
     }
 
     return undefined;
@@ -54,8 +60,33 @@ export default async function Project(
     const content = project?.content?.replace(/\\n/g, '\n');
 
     if (!project) notFound();
-    else return (
+
+    const baseUrl = getMetadataBase().toString();
+    const projectUrl = `${baseUrl}/${locale}/project/${slug}`;
+
+    const creativeWorkSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.title,
+        description: project.seo_description,
+        url: projectUrl,
+        author: {
+            '@type': 'Person',
+            name: locale === 'zh-TW' ? '朱晨霖' : 'Chen Lin Chu',
+            url: baseUrl
+        },
+        datePublished: project.build_at,
+        ...(project.updated_at && { dateModified: project.updated_at }),
+        image: project.cover_image_url,
+        keywords: project.seo_keywords.join(', ')
+    };
+
+    return (
         <div className={styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+            />
             <h1 className={styles.title}>{project.title}</h1>
             <p className={styles.subtitle}>{project.subtitle}</p>
             <div className={styles.skills}>

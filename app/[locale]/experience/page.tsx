@@ -3,17 +3,23 @@ import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import experience from '@/lib/experience';
+import { createSeoMetadata } from '@/lib/seo/metadata';
 
 import Styles from './page.module.scss';
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+    { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+    const { locale } = await params;
     const t = await getTranslations('metadata.experience');
 
-    return {
+    return createSeoMetadata({
+        locale,
+        path: '/experience',
         title: t('title'),
         description: t('description'),
         keywords: t('keywords')
-    };
+    });
 }
 
 export default async function Experience(): Promise<React.ReactNode> {

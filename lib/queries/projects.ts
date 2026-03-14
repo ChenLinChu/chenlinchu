@@ -79,7 +79,9 @@ export async function getProjectBySlugAndLanguage(
                         content,
                         seo_description,
                         seo_keywords,
-                        seo_slug
+                        seo_slug,
+                        build_at,
+                        updated_at
                     FROM projects
                     WHERE seo_slug = ${slug}
                     AND language = ${language}

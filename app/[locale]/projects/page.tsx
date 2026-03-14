@@ -5,13 +5,14 @@ import React, { cache } from 'react';
 
 import ProjectList from '@/components/app/projects/ProjectList';
 import { getProjectsByLanguage } from '@/lib/queries/projects';
+import { createSeoMetadata } from '@/lib/seo/metadata';
 
 const getProjects = cache(async (locale: string) =>
     getProjectsByLanguage(locale)
 );
 
 export async function generateMetadata(
-    { params }: { params: Promise<{ locale: string; }> }
+    { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata | undefined> {
     const { locale } = await params;
     const projects = await getProjects(locale);
@@ -19,14 +20,17 @@ export async function generateMetadata(
     if (projects.length > 0) {
         const t = await getTranslations('metadata.projects');
         const allTags = Array.from(new Set(projects.flatMap(project => project.tags)));
+        const keywords = t('keywords', {
+            tags: allTags.join(locale === 'zh-TW' ? '、' : ', ')
+        });
 
-        return {
+        return createSeoMetadata({
+            locale,
+            path: '/projects',
             title: t('title'),
             description: t('description'),
-            keywords: t('keywords', {
-                tags: allTags.join(locale === 'zh-TW' ? '、' : ', ')
-            })
-        };
+            keywords
+        });
     }
 
     return undefined;

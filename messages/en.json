@@ -15,7 +15,9 @@
         },
         "projects": {
             "title": "Projects | Front-End Engineer - Chen Lin Chu",
+            "titleTag": "Projects tagged {tag} | Front-End Engineer - Chen Lin Chu",
             "description": "Senior Front-End Engineer Chen Lin Chu's project showcase, including front-end frameworks, state management, programming languages, animation effects, packaging tools, development standards, and experience with Google and AWS cloud services.",
+            "descriptionTag": "Senior Front-End Engineer Chen Lin Chu's projects tagged with {tag}.",
             "keywords": "Front-End Development, {tags}, Front-End Engineer Skills"
         },
         "skills": {

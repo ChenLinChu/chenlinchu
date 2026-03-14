@@ -5,6 +5,7 @@ import React from 'react';
 
 import { skillsData } from '@/components/app/skills/skillsData';
 import { Link } from '@/i18n/navigation';
+import { createSeoMetadata } from '@/lib/seo/metadata';
 
 import Styles from './page.module.scss';
 
@@ -23,14 +24,19 @@ const rootStyles = (brandColor: string): { [key: string]: string } => ({
     '--contrast-color': getContrastColor(brandColor)
 });
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+    { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+    const { locale } = await params;
     const t = await getTranslations('metadata.skills');
 
-    return {
+    return createSeoMetadata({
+        locale,
+        path: '/skills',
         title: t('title'),
         description: t('description'),
         keywords: t('keywords')
-    };
+    });
 }
 
 export default async function SkillsPage(): Promise<React.ReactElement> {

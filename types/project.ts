@@ -7,6 +7,7 @@ export interface Project {
     subtitle: string;
     tags: string[];
     build_at: string;
+    updated_at?: string;
     content: string;
     seo_description: string;
     seo_keywords: string[];
