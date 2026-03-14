@@ -6,6 +6,7 @@ import Section1 from '@/components/app/page/Section1';
 import Section2 from '@/components/app/page/Section2';
 import SectionProjects from '@/components/app/page/SectionProjects';
 import { createSeoMetadata } from '@/lib/seo/metadata';
+import { createBreadcrumbSchema } from '@/lib/seo/schemas';
 
 import Styles from './page.module.scss';
 
@@ -27,8 +28,18 @@ export async function generateMetadata(
 export default async function Index(
     { params }: { params: Promise<{ locale: string }> }
 ): Promise<React.ReactNode> {
+    const { locale } = await params;
+    const t = await getTranslations('metadata.breadcrumb');
+    const breadcrumbSchema = createBreadcrumbSchema(locale, [
+        { name: t('home'), path: '/' }
+    ]);
+
     return (
         <div className={Styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <Section1 />
             <Section2 />
             <SectionProjects params={params} />

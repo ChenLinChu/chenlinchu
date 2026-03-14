@@ -6,6 +6,7 @@ import React from 'react';
 import { skillsData } from '@/components/app/skills/skillsData';
 import { Link } from '@/i18n/navigation';
 import { createSeoMetadata } from '@/lib/seo/metadata';
+import { createBreadcrumbSchema } from '@/lib/seo/schemas';
 
 import Styles from './page.module.scss';
 
@@ -39,11 +40,23 @@ export async function generateMetadata(
     });
 }
 
-export default async function SkillsPage(): Promise<React.ReactElement> {
+export default async function SkillsPage(
+    { params }: { params: Promise<{ locale: string }> }
+): Promise<React.ReactElement> {
+    const { locale } = await params;
     const t = await getTranslations('main.skills');
+    const tBreadcrumb = await getTranslations('metadata.breadcrumb');
+    const breadcrumbSchema = createBreadcrumbSchema(locale, [
+        { name: tBreadcrumb('home'), path: '/' },
+        { name: tBreadcrumb('skills'), path: '/skills' }
+    ]);
 
     return (
         <main className={Styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             {skillsData.map((block) => (
                 <section
                     className={Styles.section}

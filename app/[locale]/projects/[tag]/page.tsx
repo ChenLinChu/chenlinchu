@@ -6,6 +6,7 @@ import React, { cache } from 'react';
 import ProjectList from '@/components/app/projects/ProjectList';
 import { getProjectsByTagAndLanguage } from '@/lib/queries/projects';
 import { createSeoMetadata } from '@/lib/seo/metadata';
+import { createBreadcrumbSchema } from '@/lib/seo/schemas';
 
 const getProjects = cache(async (tag: string, locale: string) =>
     getProjectsByTagAndLanguage(tag, locale)
@@ -38,11 +39,28 @@ export async function generateMetadata(
 }
 
 export default async function ProjectByTag(
-    { params }: { params: Promise<{ locale: string; tag: string; }> }
+    { params }: { params: Promise<{ locale: string; tag: string }> }
 ): Promise<React.ReactNode> {
     const { locale, tag } = await params;
+    const decodedTag = decodeURIComponent(tag);
     const projects = await getProjects(tag, locale);
 
     if (projects.length === 0) notFound();
-    else return <ProjectList projects={projects} />;
+
+    const t = await getTranslations('metadata.breadcrumb');
+    const breadcrumbSchema = createBreadcrumbSchema(locale, [
+        { name: t('home'), path: '/' },
+        { name: t('projects'), path: '/projects' },
+        { name: decodedTag, path: `/projects/${decodedTag}` }
+    ]);
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <ProjectList projects={projects} />
+        </>
+    );
 }

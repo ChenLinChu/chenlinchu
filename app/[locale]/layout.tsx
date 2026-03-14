@@ -8,6 +8,7 @@ import type { ReactElement, ReactNode } from 'react';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import { getMetadataBase } from '@/lib/seo/metadata';
+import { createWebSiteSchema } from '@/lib/seo/schemas';
 
 import { ThemeProvider } from '../providers/ThemeProvider';
 import Styles from './layout.module.scss';
@@ -46,12 +47,18 @@ export default async function RootLayout({
                 : 'Frontend engineer with expertise in React, Vue, and modern web technologies.'
     };
 
+    const webSiteSchema = createWebSiteSchema(locale);
+
     return (
         <html lang={locale}>
             <head>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
                 />
                 <link
                     rel="icon"

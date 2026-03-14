@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm';
 import { Link } from '@/i18n/navigation';
 import { getProjectBySlugAndLanguage } from '@/lib/queries/projects';
 import { createSeoMetadata, getMetadataBase } from '@/lib/seo/metadata';
+import { createBreadcrumbSchema } from '@/lib/seo/schemas';
 import { getSkills } from '@/lib/skills';
 
 import styles from './page.module.scss';
@@ -64,6 +65,13 @@ export default async function Project(
     const baseUrl = getMetadataBase().toString();
     const projectUrl = `${baseUrl}/${locale}/project/${slug}`;
 
+    const t = await getTranslations('metadata.breadcrumb');
+    const breadcrumbSchema = createBreadcrumbSchema(locale, [
+        { name: t('home'), path: '/' },
+        { name: t('projects'), path: '/projects' },
+        { name: project.title, path: `/project/${slug}` }
+    ]);
+
     const creativeWorkSchema = {
         '@context': 'https://schema.org',
         '@type': 'CreativeWork',
@@ -83,6 +91,10 @@ export default async function Project(
 
     return (
         <div className={styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}

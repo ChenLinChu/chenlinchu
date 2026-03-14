@@ -4,6 +4,7 @@ import React from 'react';
 
 import experience from '@/lib/experience';
 import { createSeoMetadata } from '@/lib/seo/metadata';
+import { createBreadcrumbSchema } from '@/lib/seo/schemas';
 
 import Styles from './page.module.scss';
 
@@ -22,11 +23,23 @@ export async function generateMetadata(
     });
 }
 
-export default async function Experience(): Promise<React.ReactNode> {
+export default async function Experience(
+    { params }: { params: Promise<{ locale: string }> }
+): Promise<React.ReactNode> {
+    const { locale } = await params;
     const t = await getTranslations('main.experience');
+    const tBreadcrumb = await getTranslations('metadata.breadcrumb');
+    const breadcrumbSchema = createBreadcrumbSchema(locale, [
+        { name: tBreadcrumb('home'), path: '/' },
+        { name: tBreadcrumb('experience'), path: '/experience' }
+    ]);
 
     return (
         <div>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             {experience.map((item, index) => (
                 <div
                     className={Styles.experience_item_container}
