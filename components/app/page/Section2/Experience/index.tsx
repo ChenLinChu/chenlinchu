@@ -18,6 +18,23 @@ function calculateYearsSince(startDate: string): number {
     return Math.round(years * 10) / 10;
 }
 
+function calculateDuration(
+    startDate: { year: string; month: string },
+    endDate: { year: string | null; month: string | null }
+): number {
+    const start = new Date(`${startDate.year}-${startDate.month}-01`);
+    const end =
+        endDate.year === null
+            ? new Date()
+            : new Date(`${endDate.year}-${endDate.month}-01`);
+
+    const diffInMs = end.getTime() - start.getTime();
+    const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+    const years = diffInDays / 365.25;
+
+    return Math.round(years * 10) / 10;
+}
+
 export default async function Experience(): Promise<React.ReactNode> {
     const t = await getTranslations('main.experience');
     const tForBlock = await getTranslations('main.page.block.experience');
@@ -52,23 +69,34 @@ export default async function Experience(): Promise<React.ReactNode> {
                                 {t(`companies.${item.company}`)}
                             </div>
 
-                            <div className={Styles.experience_item_date}>
-                                {t('dateFormat.date', {
-                                    year: item.startDate.year,
-                                    month: item.startDate.month
-                                })}
+                            <div className={Styles.experience_item_date_container}>
+                                <div className={Styles.experience_item_date}>
+                                    {t('dateFormat.date', {
+                                        year: item.startDate.year,
+                                        month: item.startDate.month
+                                    })}
 
-                                <span className={Styles.experience_item_date_separator}>
-                                    -
+                                    <span className={Styles.experience_item_date_separator}>
+                                        -
+                                    </span>
+
+                                    {item.endDate.year === null
+                                        ? t('dateFormat.present')
+                                        : t('dateFormat.date', {
+                                            year: item.endDate.year,
+                                            month: item.endDate.month
+                                        })
+                                    }
+                                </div>
+
+                                <span className={Styles.experience_item_duration}>
+                                    {tForBlock('duration_years', {
+                                        years: calculateDuration(
+                                            item.startDate,
+                                            item.endDate
+                                        )
+                                    })}
                                 </span>
-
-                                {item.endDate.year === null
-                                    ? t('dateFormat.present')
-                                    : t('dateFormat.date', {
-                                        year: item.endDate.year,
-                                        month: item.endDate.month
-                                    })
-                                }
                             </div>
                         </div>
                     </div>

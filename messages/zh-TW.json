@@ -77,7 +77,8 @@
                 },
                 "experience": {
                     "total_years": "{total_years} 年",
-                    "title": "經歷"
+                    "title": "經歷",
+                    "duration_years": "{years} 年"
                 },
                 "projects": {
                     "buildAt": "開發於 {company}"

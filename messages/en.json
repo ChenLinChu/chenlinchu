@@ -77,7 +77,8 @@
                 },
                 "experience": {
                     "total_years": "{total_years} years",
-                    "title": "Experience"
+                    "title": "Experience",
+                    "duration_years": "{years} years"
                 },
                 "projects": {
                     "buildAt": "Build At {company}"
