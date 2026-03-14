@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import React from 'react';
+import React, { cache } from 'react';
 import Markdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
@@ -11,6 +11,10 @@ import { getProjectBySlugAndLanguage } from '@/lib/queries/projects';
 import { getSkills } from '@/lib/skills';
 
 import styles from './page.module.scss';
+
+const getProject = cache(async (slug: string, locale: string) =>
+    getProjectBySlugAndLanguage(slug, locale)
+);
 
 const getContrastColor = (brandColor: string): string => {
     const r = parseInt(brandColor.slice(1, 3), 16);
@@ -26,7 +30,7 @@ export async function generateMetadata(
     { params }: { params: Promise<{ locale: string; slug: string; }> }
 ): Promise<Metadata | undefined> {
     const { locale, slug } = await params;
-    const project = await getProjectBySlugAndLanguage(slug, locale);
+    const project = await getProject(slug, locale);
 
     if (project) {
         const t = await getTranslations('metadata.project/[slug]');
@@ -45,7 +49,7 @@ export default async function Project(
     { params }: { params: Promise<{ locale: string; slug: string; }> }
 ): Promise<React.ReactNode> {
     const { locale, slug } = await params;
-    const project = await getProjectBySlugAndLanguage(slug, locale);
+    const project = await getProject(slug, locale);
     const skillsData = getSkills(project?.tags ?? []);
     const content = project?.content?.replace(/\\n/g, '\n');
 

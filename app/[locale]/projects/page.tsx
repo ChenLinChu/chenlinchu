@@ -1,18 +1,22 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import React from 'react';
+import React, { cache } from 'react';
 
 import ProjectList from '@/components/app/projects/ProjectList';
 import { getProjectsByLanguage } from '@/lib/queries/projects';
+
+const getProjects = cache(async (locale: string) =>
+    getProjectsByLanguage(locale)
+);
 
 export async function generateMetadata(
     { params }: { params: Promise<{ locale: string; }> }
 ): Promise<Metadata | undefined> {
     const { locale } = await params;
-    const projects = await getProjectsByLanguage(locale);
+    const projects = await getProjects(locale);
 
-    if (projects) {
+    if (projects.length > 0) {
         const t = await getTranslations('metadata.projects');
         const allTags = Array.from(new Set(projects.flatMap(project => project.tags)));
 
@@ -32,7 +36,7 @@ export default async function Projects(
     { params }: { params: Promise<{ locale: string; }> }
 ): Promise<React.ReactNode> {
     const { locale } = await params;
-    const projects = await getProjectsByLanguage(locale);
+    const projects = await getProjects(locale);
 
     if (projects.length === 0) notFound();
     else return <ProjectList projects={projects} />;
