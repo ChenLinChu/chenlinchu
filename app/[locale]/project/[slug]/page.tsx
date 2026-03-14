@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import React, { cache } from 'react';
@@ -6,7 +7,6 @@ import Markdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 
-import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { getProjectBySlugAndLanguage } from '@/lib/queries/projects';
 import { createSeoMetadata, getMetadataBase } from '@/lib/seo/metadata';
@@ -112,28 +112,28 @@ export default async function Project(
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
                 />
                 <h1 className={styles.title}>{project.title}</h1>
-            <p className={styles.subtitle}>{project.subtitle}</p>
-            <div className={styles.skills}>
-                {skillsData.map((skill, index) => (
-                    <Link
-                        className={styles.skillLink}
-                        key={index}
-                        href={`/projects/${skill.fileName}`}
-                        style={{
-                            '--brand-color': skill.brandColor,
-                            '--contrast-color': getContrastColor(skill.brandColor)
-                        } as React.CSSProperties}
-                    >
-                        {skill.fileName}
-                    </Link>
-                ))}
-            </div>
+                <p className={styles.subtitle}>{project.subtitle}</p>
+                <div className={styles.skills}>
+                    {skillsData.map((skill, index) => (
+                        <Link
+                            className={styles.skillLink}
+                            key={index}
+                            href={`/projects/${skill.fileName}`}
+                            style={{
+                                '--brand-color': skill.brandColor,
+                                '--contrast-color': getContrastColor(skill.brandColor)
+                            } as React.CSSProperties}
+                        >
+                            {skill.fileName}
+                        </Link>
+                    ))}
+                </div>
 
-            <div className={styles.markdown}>
-                <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
-                    {content}
-                </Markdown>
-            </div>
+                <div className={styles.markdown}>
+                    <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+                        {content}
+                    </Markdown>
+                </div>
             </div>
         </div>
     );
