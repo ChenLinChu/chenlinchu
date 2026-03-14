@@ -1,3 +1,5 @@
+import { unstable_cache } from 'next/cache';
+
 import { sql } from '@/lib/db';
 import type { Project } from '@/types/project';
 
@@ -6,68 +8,93 @@ export async function getProjectsByLanguage(
     limit = 10,
     offset = 0
 ): Promise<Project[]> {
-    try {
-        const projects = await sql`
-            SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug
-            FROM projects
-            WHERE language = ${language}
-            ORDER BY created_at DESC
-            LIMIT ${limit} OFFSET ${offset}
-        `;
+    const getCached = unstable_cache(
+        async () => {
+            try {
+                const projects = await sql`
+                    SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug
+                    FROM projects
+                    WHERE language = ${language}
+                    ORDER BY created_at DESC
+                    LIMIT ${limit} OFFSET ${offset}
+                `;
 
-        return projects as Project[];
-    } catch (error) {
-        console.error('Failed to fetch projects:', error);
+                return projects as Project[];
+            } catch (error) {
+                console.error('Failed to fetch projects:', error);
 
-        return [];
-    }
+                return [];
+            }
+        },
+        ['projects', 'by-language', language, String(limit), String(offset)],
+        { revalidate: 60, tags: ['projects'] }
+    );
+
+    return getCached();
 }
 
 export async function getProjectsByTagAndLanguage(
     tag: string,
     language: string
 ): Promise<Project[]> {
-    try {
-        const projects = await sql`
-            SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug
-            FROM projects
-            WHERE ${decodeURIComponent(tag)} = ANY(tags)
-            AND language = ${language}
-            ORDER BY created_at DESC
-        `;
+    const decodedTag = decodeURIComponent(tag);
+    const getCached = unstable_cache(
+        async () => {
+            try {
+                const projects = await sql`
+                    SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug
+                    FROM projects
+                    WHERE ${decodedTag} = ANY(tags)
+                    AND language = ${language}
+                    ORDER BY created_at DESC
+                `;
 
-        return projects as Project[];
-    } catch (error) {
-        console.error('Failed to fetch projects:', error);
+                return projects as Project[];
+            } catch (error) {
+                console.error('Failed to fetch projects:', error);
 
-        return [];
-    }
+                return [];
+            }
+        },
+        ['projects', 'by-tag', tag, language],
+        { revalidate: 60, tags: ['projects'] }
+    );
+
+    return getCached();
 }
 
 export async function getProjectBySlugAndLanguage(
     slug: string,
     language: string
 ): Promise<Project | null> {
-    try {
-        const project = await sql`
-            SELECT cover_image_url,
-                title,
-                subtitle,
-                external_link,
-                tags,
-                content,
-                seo_description,
-                seo_keywords,
-                seo_slug
-            FROM projects
-            WHERE seo_slug = ${slug}
-            AND language = ${language}
-        `;
+    const getCached = unstable_cache(
+        async () => {
+            try {
+                const project = await sql`
+                    SELECT cover_image_url,
+                        title,
+                        subtitle,
+                        external_link,
+                        tags,
+                        content,
+                        seo_description,
+                        seo_keywords,
+                        seo_slug
+                    FROM projects
+                    WHERE seo_slug = ${slug}
+                    AND language = ${language}
+                `;
 
-        return project[0] as Project;
-    } catch (error) {
-        console.error('Failed to fetch project:', error);
+                return project[0] as Project;
+            } catch (error) {
+                console.error('Failed to fetch project:', error);
 
-        return null;
-    }
+                return null;
+            }
+        },
+        ['project', 'by-slug', slug, language],
+        { revalidate: 60, tags: ['projects'] }
+    );
+
+    return getCached();
 }
