@@ -80,7 +80,13 @@
                     "duration_years": "{years} 年"
                 },
                 "projects": {
-                    "buildAt": "開發於 {company}"
+                    "buildAt": "開發於 {company}",
+                    "externalLinkAriaLabel": "前往 {title} 外部連結"
+                },
+                "socialLinks": {
+                    "linkedIn": "前往 LinkedIn 個人檔案",
+                    "email": "寄送電子郵件",
+                    "github": "前往 GitHub 個人檔案"
                 }
             }
         },

@@ -1,14 +1,17 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import Styles from './index.module.scss';
 
 export default function GitHubIcon(): React.ReactNode {
+    const t = useTranslations('main.page.block.socialLinks');
 
     return (
         <a
             href="https://github.com/chenlinchu"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t('github')}
         >
             <div className={Styles.container}>
                 <svg

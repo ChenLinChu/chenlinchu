@@ -42,11 +42,14 @@ export default async function ProjectContainer(
                             href={project.external_link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={t('externalLinkAriaLabel', {
+                                title: project.title
+                            })}
                         >
                             <Image
                                 className={Styles.externalLink}
                                 src={'/icons/External Link.svg'}
-                                alt={'external link'}
+                                alt=""
                                 width={25}
                                 height={25}
                             />

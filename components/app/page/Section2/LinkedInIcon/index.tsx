@@ -1,17 +1,18 @@
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
 import Styles from './index.module.scss';
 
 export default function LinkedInIcon(): React.ReactNode {
-
     const locale = useLocale();
+    const t = useTranslations('main.page.block.socialLinks');
 
     return (
         <a
             href={`https://www.linkedin.com/in/chenlinchu/?locale=${locale === 'en' ? 'en' : 'zh_TW'}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t('linkedIn')}
         >
             <div className={Styles.container}>
                 <svg

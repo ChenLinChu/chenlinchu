@@ -1,14 +1,17 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import Styles from './index.module.scss';
 
-export default function LinkedInIcon(): React.ReactNode {
+export default function MailIcon(): React.ReactNode {
+    const t = useTranslations('main.page.block.socialLinks');
 
     return (
         <a
             href="mailto:chenlinchu637@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t('email')}
         >
             <div className={Styles.container}>
                 <svg

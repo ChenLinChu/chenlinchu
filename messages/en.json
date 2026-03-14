@@ -80,7 +80,13 @@
                     "duration_years": "{years} years"
                 },
                 "projects": {
-                    "buildAt": "Build At {company}"
+                    "buildAt": "Build At {company}",
+                    "externalLinkAriaLabel": "Visit {title} external link"
+                },
+                "socialLinks": {
+                    "linkedIn": "Visit LinkedIn profile",
+                    "email": "Send email",
+                    "github": "Visit GitHub profile"
                 }
             }
         },
