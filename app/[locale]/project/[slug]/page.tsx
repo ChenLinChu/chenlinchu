@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import React, { cache } from 'react';
@@ -7,6 +6,7 @@ import Markdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 
+import { Link } from '@/i18n/navigation';
 import { getProjectBySlugAndLanguage } from '@/lib/queries/projects';
 import { getSkills } from '@/lib/skills';
 
