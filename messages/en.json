@@ -35,7 +35,9 @@
     "header": {
         "all": "All",
         "experience": "Experience",
+        "experienceShort": "Work",
         "projects": "Projects",
+        "projectsShort": "Projects",
         "skills": "Skills"
     },
     "main": {

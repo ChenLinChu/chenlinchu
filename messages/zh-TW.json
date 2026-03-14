@@ -35,7 +35,9 @@
     "header": {
         "all": "全部",
         "experience": "經歷",
+        "experienceShort": "經歷",
         "projects": "專案作品",
+        "projectsShort": "專案",
         "skills": "技能"
     },
     "main": {

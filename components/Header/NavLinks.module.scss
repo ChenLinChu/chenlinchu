@@ -13,3 +13,31 @@
         width: 15vw;
     }
 }
+
+.nav__experience-full {
+    @media (max-width: 767.99px) {
+        display: none;
+    }
+}
+
+.nav__experience-short {
+    display: none;
+
+    @media (max-width: 767.99px) {
+        display: inline;
+    }
+}
+
+.nav__projects-full {
+    @media (max-width: 767.99px) {
+        display: none;
+    }
+}
+
+.nav__projects-short {
+    display: none;
+
+    @media (max-width: 767.99px) {
+        display: inline;
+    }
+}

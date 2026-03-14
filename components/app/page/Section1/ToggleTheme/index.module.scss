@@ -45,6 +45,10 @@
             color: var(--color-text);
             font-size: 0.9rem;
             font-weight: 500;
+
+            @media (max-width: 767.99px) {
+                display: none;
+            }
         }
     }
 

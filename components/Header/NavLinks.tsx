@@ -30,7 +30,12 @@ export default function NavLinks(): React.ReactNode {
                     pathname === '/experience' ? 'page' : undefined
                 }
             >
-                {t('experience')}
+                <span className={Styles['nav__experience-full']}>
+                    {t('experience')}
+                </span>
+                <span className={Styles['nav__experience-short']}>
+                    {t('experienceShort')}
+                </span>
             </Link>
 
             <Link
@@ -40,7 +45,12 @@ export default function NavLinks(): React.ReactNode {
                     pathname?.includes('/project') ? 'page' : undefined
                 }
             >
-                {t('projects')}
+                <span className={Styles['nav__projects-full']}>
+                    {t('projects')}
+                </span>
+                <span className={Styles['nav__projects-short']}>
+                    {t('projectsShort')}
+                </span>
             </Link>
 
             <Link
