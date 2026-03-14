@@ -57,6 +57,8 @@ export default async function SkillsPage(
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
+            <h1 className={Styles.pageTitle}>{tBreadcrumb('skills')}</h1>
+            <div className={Styles.grid}>
             {skillsData.map((block) => (
                 <section
                     className={Styles.section}
@@ -92,6 +94,7 @@ export default async function SkillsPage(
                     </ul>
                 </section>
             ))}
+            </div>
         </main>
     );
 }
