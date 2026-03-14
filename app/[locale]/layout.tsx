@@ -16,7 +16,7 @@ import Styles from './layout.module.scss';
 export const metadata = {
     metadataBase: getMetadataBase(),
     title: {
-        default: 'Chen Lin Chu | Front-End Engineer',
+        default: 'Chen Lin Chu | Senior Front-End Engineer',
         template: '%s'
     },
     // eslint-disable-next-line max-len
@@ -45,12 +45,13 @@ export default async function RootLayout({
         '@type': 'Person',
         name: locale === 'zh-TW' ? '朱晨霖' : 'Chen Lin Chu',
         alternateName: locale === 'zh-TW' ? 'Chen Lin Chu' : '朱晨霖',
-        jobTitle: locale === 'zh-TW' ? '前端工程師' : 'Front-End Engineer',
+        jobTitle: locale === 'zh-TW' ? '資深前端工程師' : 'Senior Front-End Engineer',
         url: baseUrl,
         description:
             locale === 'zh-TW'
-                ? '專注於 React、Vue 及現代網頁技術的前端工程師。擅長效能優化、響應式設計及使用者體驗。'
-                : 'Frontend engineer with expertise in React, Vue, and modern web technologies.'
+                ? '專注於 React、Vue 及現代網頁技術的資深前端工程師。擅長效能優化、響應式設計及使用者體驗。'
+                // eslint-disable-next-line max-len
+                : 'Senior frontend engineer with expertise in React, Vue, and modern web technologies.'
     };
 
     const webSiteSchema = createWebSiteSchema(locale);

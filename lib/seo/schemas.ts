@@ -42,12 +42,13 @@ export function createWebSiteSchema(locale: string): object {
     return {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: locale === 'zh-TW' ? '朱晨霖 | 前端工程師' : 'Chen Lin Chu | Front-End Engineer',
+        name: locale === 'zh-TW' ? '朱晨霖 | 資深前端工程師' : 'Chen Lin Chu | Senior Front-End Engineer',
         url: baseUrl,
         description:
             locale === 'zh-TW'
-                ? '專注於 React、Vue 及現代網頁技術的前端工程師。擅長效能優化、響應式設計及使用者體驗。'
-                : 'Frontend engineer with expertise in React, Vue, and modern web technologies.',
+                ? '專注於 React、Vue 及現代網頁技術的資深前端工程師。擅長效能優化、響應式設計及使用者體驗。'
+                // eslint-disable-next-line max-len
+                : 'Senior frontend engineer with expertise in React, Vue, and modern web technologies.',
         inLanguage: [locale === 'zh-TW' ? 'zh-Hant' : 'en'],
         publisher: {
             '@type': 'Person',
