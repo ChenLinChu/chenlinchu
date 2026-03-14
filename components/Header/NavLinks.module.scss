@@ -1,0 +1,15 @@
+.nav__button {
+    position: relative;
+    z-index: 2;
+    width: 150px;
+    padding: 10px 0;
+    color: var(--color-text);
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    @media (max-width: 1199.99px) {
+        width: 15vw;
+    }
+}
