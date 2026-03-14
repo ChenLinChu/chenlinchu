@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import React, { cache } from 'react';
 
@@ -45,7 +45,7 @@ export default async function ProjectByTag(
     const decodedTag = decodeURIComponent(tag);
     const projects = await getProjects(tag, locale);
 
-    if (projects.length === 0) notFound();
+    if (projects.length === 0) redirect(`/${locale}`);
 
     const t = await getTranslations('metadata.breadcrumb');
     const breadcrumbSchema = createBreadcrumbSchema(locale, [
