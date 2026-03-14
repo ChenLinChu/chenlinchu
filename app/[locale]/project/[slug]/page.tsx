@@ -6,6 +6,7 @@ import Markdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { getProjectBySlugAndLanguage } from '@/lib/queries/projects';
 import { createSeoMetadata, getMetadataBase } from '@/lib/seo/metadata';
@@ -90,16 +91,27 @@ export default async function Project(
     };
 
     return (
-        <div className={styles.container}>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
-            />
-            <h1 className={styles.title}>{project.title}</h1>
+        <div className={styles.wrapper}>
+            <div className={styles.coverWrapper}>
+                <Image
+                    className={styles.cover}
+                    src={project.cover_image_url}
+                    alt={project.title}
+                    width={1920}
+                    height={540}
+                    priority
+                />
+            </div>
+            <div className={styles.container}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+                />
+                <h1 className={styles.title}>{project.title}</h1>
             <p className={styles.subtitle}>{project.subtitle}</p>
             <div className={styles.skills}>
                 {skillsData.map((skill, index) => (
@@ -121,6 +133,7 @@ export default async function Project(
                 <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                     {content}
                 </Markdown>
+            </div>
             </div>
         </div>
     );
