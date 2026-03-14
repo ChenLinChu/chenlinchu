@@ -16,18 +16,11 @@ const NAV_POSITIONS = {
 const getNavPositionClass = (
     pathname: string | null
 ): string => {
-    switch (pathname) {
-        case '/':
-            return NAV_POSITIONS.all;
-        case '/experience':
-            return NAV_POSITIONS.experience;
-        case '/projects':
-            return NAV_POSITIONS.projects;
-        case '/skills':
-            return NAV_POSITIONS.skills;
-        default:
-            return NAV_POSITIONS.all;
-    }
+    if (!pathname || pathname === '/') return NAV_POSITIONS.all;
+    else if (pathname === '/experience') return NAV_POSITIONS.experience;
+    else if (pathname.includes('/project')) return NAV_POSITIONS.projects;
+    else if (pathname === '/skills') return NAV_POSITIONS.skills;
+    else return NAV_POSITIONS.all;
 };
 
 export default function NavButtonBg(): React.ReactNode {
