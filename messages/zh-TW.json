@@ -112,6 +112,7 @@
             "title": "此頁面使用到技術"
         },
         "experience": {
+            "terminalPrompt": "$ git log career --oneline",
             "positions": {
                 "senior_frontend": "資深前端工程師",
                 "rd_team_leader": "研發組組長",

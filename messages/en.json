@@ -112,6 +112,7 @@
             "title": "This page uses the following technologies"
         },
         "experience": {
+            "terminalPrompt": "$ git log career --oneline",
             "positions": {
                 "senior_frontend": "Senior Front-End Engineer",
                 "rd_team_leader": "R&D Team Leader",

@@ -8,6 +8,31 @@ import { createBreadcrumbSchema } from '@/lib/seo/schemas';
 
 import Styles from './page.module.scss';
 
+function generateCommitHash(
+    company: string,
+    position: string,
+    startDate: { year: string; month: string },
+    endDate: { year: string | null; month: string | null }
+): string {
+    const endYear = endDate.year ?? 'x';
+    const endMonth = endDate.month ?? '';
+    const str = `${company}-${position}-${startDate.year}${startDate.month}-${endYear}${endMonth}`;
+    let h1 = 5381;
+    let h2 = 33;
+    for (let i = 0; i < str.length; i++) {
+        const c = str.charCodeAt(i);
+        h1 = ((h1 << 5) + h1 + c) >>> 0;
+        h2 = ((h2 * 31) + c * 7) >>> 0;
+    }
+    const combined = (h1 ^ (h2 << 13) ^ (h2 >>> 19)) >>> 0;
+    const chars = '0123456789abcdef';
+    let hash = '';
+    for (let i = 0; i < 7; i++) {
+        hash += chars[(combined >>> (i * 4)) & 0xf];
+    }
+    return hash;
+}
+
 export async function generateMetadata(
     { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
@@ -40,65 +65,74 @@ export default async function Experience(
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
-            <div className={Styles.timeline}>
-                {experience.map((item, index) => (
-                    <article
-                        className={Styles.card}
-                        key={index}
-                    >
-                        <div className={Styles.cardHeader}>
-                            <div className={Styles.cardMeta}>
-                                <h2 className={Styles.position}>
-                                    {t(`positions.${item.position}`)}
-                                </h2>
-                                <p className={Styles.company}>
-                                    {t(`companies.${item.company}`)}
-                                </p>
-                            </div>
-                            <span className={Styles.dateBadge}>
-                                {t('dateFormat.date', {
-                                    year: item.startDate.year,
-                                    month: item.startDate.month
-                                })}
-                                <span className={Styles.dateSeparator}>–</span>
-                                {item.endDate.year === null
-                                    ? t('dateFormat.present')
-                                    : t('dateFormat.date', {
-                                        year: item.endDate.year,
-                                        month: item.endDate.month
-                                    })
-                                }
-                            </span>
-                        </div>
+            <div className={Styles.terminal}>
+                <div className={Styles.terminalHeader}>
+                    <span className={Styles.terminalDot} />
+                    <span className={Styles.terminalDot} />
+                    <span className={Styles.terminalDot} />
+                    <span className={Styles.terminalTitle}>career.log</span>
+                </div>
+                <div className={Styles.terminalContent}>
+                    <div className={Styles.promptLine}>
+                        <span className={Styles.prompt}>{t('terminalPrompt')}</span>
+                    </div>
+                    <div className={Styles.logOutput}>
+                        {experience.map((item, index) => {
+                            const hash = generateCommitHash(
+                                item.company,
+                                item.position,
+                                item.startDate,
+                                item.endDate
+                            );
+                            const start = `${item.startDate.year}-${item.startDate.month}`;
+                            const dateRange =
+                                item.endDate.year === null
+                                    ? `${start} – ${t('dateFormat.present')}`
+                                    : `${start} – ${item.endDate.year}-${item.endDate.month}`;
+                            const content = t.raw(`content.${item.company}_${item.position}`) as {
+                                title: string;
+                                list: string[];
+                            }[];
 
-                        <div className={Styles.cardContent}>
-                            {t.raw(`content.${item.company}_${item.position}`).map(
-                                (
-                                    content: {
-                                        title: string;
-                                        list: string[]
-                                    },
-                                    contentIndex: number
-                                ) => (
-                                    <section
-                                        key={contentIndex}
-                                        className={Styles.contentSection}
-                                    >
-                                        <h3 className={Styles.contentTitle}>
-                                            {content.title}
-                                        </h3>
-                                        <ul className={Styles.contentList}>
-                                            {content.list.map((listItem, listItemIndex) => (
-                                                <li key={listItemIndex}>
-                                                    {listItem}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </section>
-                                ))}
-                        </div>
-                    </article>
-                ))}
+                            return (
+                                <div
+                                    className={Styles.commitBlock}
+                                    key={index}
+                                >
+                                    <div className={Styles.commitHeader}>
+                                        <span className={Styles.commitHash}>{hash}</span>
+                                        <span className={Styles.commitMessage}>
+                                            {t(`positions.${item.position}`)}{' '}
+                                            @ {t(`companies.${item.company}`)}
+                                        </span>
+                                        <span className={Styles.commitDate}>{dateRange}</span>
+                                    </div>
+                                    <div className={Styles.commitBody}>
+                                        {content.map((section, sectionIndex) => (
+                                            <div
+                                                className={Styles.commitSection}
+                                                key={sectionIndex}
+                                            >
+                                                <div className={Styles.commitSectionTitle}>
+                                                    {section.title}
+                                                </div>
+                                                <ul className={Styles.commitList}>
+                                                    {section.list.map((listItem, listIndex) => (
+                                                        <li key={listIndex}>{listItem}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className={Styles.promptLine}>
+                        <span className={Styles.prompt}>$</span>
+                        <span className={Styles.cursor}>_</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
