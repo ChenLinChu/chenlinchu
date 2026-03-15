@@ -1,17 +1,103 @@
+@keyframes typewriter-reveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes cursor-blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 0;
+    overflow: hidden;
     text-decoration: none;
 
-    .coverLink {
+    .browserFrame {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        height: calc(100% / 1920 * 1440);
-        max-height: 270px;
+        height: 100%;
+        min-height: 0;
         overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 2px 3px 15px 0 rgb(255 255 255 / 10%);
+        background-color: var(--browser-frame-bg);
+        border-radius: 10px;
+        box-shadow: 2px 3px 15px 0 rgb(0 0 0 / 20%);
+    }
+
+    .browserHeader {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        height: 28px;
+        padding: 0 12px;
+        background-color: var(--browser-header-bg);
+    }
+
+    .trafficLights {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .trafficLight {
+        width: 10px;
+        height: 10px;
+        background-color: #ff5f57;
+        border-radius: 50%;
+
+        &:nth-child(2) {
+            background-color: #febc2e;
+        }
+
+        &:nth-child(3) {
+            background-color: #28c840;
+        }
+    }
+
+    .coverLink {
+        display: block;
+        flex: 0 0 55%;
+        width: 100%;
+        min-height: 0;
+        text-decoration: none;
         cursor: pointer;
+    }
+
+    .deviceFrame {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        padding: 12px 0;
+        background-color: #1a1a1a;
+
+        [data-theme='light'] & {
+            background-color: #808080;
+        }
+    }
+
+    .browserContent {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
 
         .cover {
             width: 100%;
@@ -21,84 +107,222 @@
         }
     }
 
-    .content {
+    .deviceFrame .browserContent {
+        max-width: 150px;
+        height: 100%;
+        box-shadow: 0 0 0 1px rgb(0 0 0 / 20%);
+    }
+
+    .consolePanel {
+        position: relative;
         display: flex;
-        flex: 1;
+        flex: 0 1 45%;
         flex-direction: column;
-        justify-content: space-between;
-        margin-top: 15px;
+        min-height: 0;
+        overflow: hidden;
+        background-color: var(--console-bg);
+        border-top: 1px solid rgb(0 0 0 / 30%);
+    }
 
-        .titleWrapper {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 5px;
+    .consoleHeader {
+        display: flex;
+        flex-shrink: 0;
+        align-items: flex-end;
+        height: 28px;
+        padding: 0 8px 0 0;
+        background-color: var(--console-header-bg);
+        border-bottom: 1px solid rgb(0 0 0 / 20%);
+    }
+
+    .consoleTab {
+        padding: 6px 12px;
+        color: var(--terminal-muted);
+        font-family: "Fira Code", Monaco, Consolas, monospace;
+        font-size: 0.75rem;
+        background-color: transparent;
+        border-bottom: 2px solid transparent;
+        cursor: default;
+
+        &:hover {
+            color: var(--console-tab-text);
         }
+    }
 
-        .titleLink {
-            max-width: 90%;
-            text-decoration: none;
+    .consoleTabActive {
+        color: var(--console-tab-text);
+        background-color: var(--console-bg);
+        border-bottom-color: var(--console-tab-active);
+    }
+
+    .consoleContent {
+        flex: 1;
+        min-height: 0;
+        padding: 8px 12px;
+        overflow: hidden;
+        font-family: "Fira Code", Monaco, Consolas, monospace;
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .consoleLog {
+        --typewriter-delay: 0.2s;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: baseline;
+        margin-bottom: 3px;
+        overflow: hidden;
+        clip-path: inset(0 0 0 0);
+    }
+
+    .consoleLog:nth-child(1) {
+        --typewriter-delay: 0.05s;
+    }
+
+    .consoleLog:nth-child(2) {
+        --typewriter-delay: 0.2s;
+    }
+
+    .consoleLog:nth-child(3) {
+        --typewriter-delay: 0.35s;
+    }
+
+    .consoleLog:nth-child(4) {
+        --typewriter-delay: 0.5s;
+    }
+
+    .consoleInput {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+        padding-top: 6px;
+        overflow: hidden;
+        border-top: 1px solid rgb(255 255 255 / 8%);
+        clip-path: inset(0 0 0 0);
+    }
+
+    .browserFrame:hover .consoleLog,
+    .browserFrame:hover .consoleInput {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    .browserFrame:hover .consoleLog {
+        animation: typewriter-reveal 0.4s var(--typewriter-delay) forwards;
+    }
+
+    .browserFrame:hover .consoleInput {
+        animation: typewriter-reveal 0.3s 0.65s forwards;
+    }
+
+    .logInfo {
+        flex-shrink: 0;
+        color: var(--console-log-info);
+    }
+
+    .logInfoPlaceholder {
+        flex-shrink: 0;
+        visibility: hidden;
+    }
+
+    .logComment {
+        flex-shrink: 0;
+        color: var(--console-log-comment);
+    }
+
+    .titleLink {
+        max-width: calc(100% - 30px);
+        text-decoration: none;
+    }
+
+    .title {
+        overflow: hidden;
+        color: var(--terminal-text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &:hover {
+            text-decoration: underline;
         }
+    }
 
-        .title {
-            width: 100%;
-            overflow: hidden;
-            color: var(--color-text);
-            font-size: 1.6rem;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            line-height: 1.6rem;
+    .externalLink {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        display: inline-flex;
+        align-items: center;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.8;
         }
+    }
 
-        .externalLink {
-            transition: transform 0.1s ease-in-out;
-            pointer-events: visible;
+    .externalLinkIcon {
+        opacity: 0.9;
+        filter: brightness(1.5);
+    }
 
-            &:hover {
-                transform: scale(1.1);
-            }
+    .subtitle {
+        overflow: hidden;
+        color: var(--terminal-muted);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .tagsLabel {
+        flex-shrink: 0;
+        color: var(--terminal-muted);
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .tag {
+        padding: 1px 6px;
+        color: var(--terminal-text);
+        font-size: 0.75rem;
+        text-decoration: none;
+        background-color: rgb(255 255 255 / 8%);
+        border: 1px solid rgb(255 255 255 / 15%);
+        border-radius: 4px;
+        transition: opacity 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(255 255 255 / 12%);
+            opacity: 0.9;
         }
+    }
 
-        .subtitle {
-            margin-bottom: 15px;
-            overflow: hidden;
-            color: var(--block-title);
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            line-height: 1rem;
-        }
+    .more {
+        color: var(--terminal-muted);
+        font-size: 0.75rem;
+    }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-bottom: auto;
-        }
+    .buildAt {
+        color: var(--terminal-muted);
+        font-size: 0.75rem;
+    }
 
-        .tag {
-            padding: 2px 8px;
-            color: var(--project-tag-text);
-            font-size: 0.8rem;
-            text-decoration: none;
-            background-color: var(--project-tag-bg);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: opacity 0.2s;
+    .consoleCursor {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        margin-left: 2px;
+        vertical-align: text-bottom;
+        background-color: #fff;
+        opacity: 0;
+    }
 
-            &:hover {
-                opacity: 0.9;
-            }
-        }
-
-        .more {
-            color: var(--color-text);
-        }
-
-        .buildAt {
-            color: var(--block-title);
-            font-size: 0.8rem;
-            text-align: right;
-            line-height: 0.8rem;
-        }
+    .browserFrame:hover .consoleCursor {
+        animation: cursor-blink 1s step-end infinite 0.65s;
     }
 }

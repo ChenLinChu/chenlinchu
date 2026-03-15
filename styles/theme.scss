@@ -15,6 +15,19 @@ $color-gray: #a3a3a3;
     --dino-game-button-bg: rgba(0 0 0 / 90%);
     --project-tag-bg: #5a5a5a;
     --project-tag-text: #fafafa;
+    --browser-frame-bg: #2d2d2d;
+    --browser-header-bg: #3d3d3d;
+    --terminal-bg: #1a1a1a;
+    --terminal-header-bg: #2d2d2d;
+    --terminal-text: #7ec07e;
+    --terminal-prompt: #6a9955;
+    --terminal-muted: #888;
+    --console-bg: #1e1e1e;
+    --console-header-bg: #252526;
+    --console-tab-active: #0e639c;
+    --console-tab-text: #d4d4d4;
+    --console-log-info: #4fc1ff;
+    --console-log-comment: #6a9955;
 }
 
 [data-theme="light"] {
@@ -30,4 +43,17 @@ $color-gray: #a3a3a3;
     --dino-game-button-bg: rgba(255 255 255 / 90%);
     --project-tag-bg: #d4d4d4;
     --project-tag-text: #1e1e1e;
+    --browser-frame-bg: #e8e8e8;
+    --browser-header-bg: #d4d4d4;
+    --terminal-bg: #0d1117;
+    --terminal-header-bg: #161b22;
+    --terminal-text: #58a6ff;
+    --terminal-prompt: #79c0ff;
+    --terminal-muted: #8b949e;
+    --console-bg: #1e1e1e;
+    --console-header-bg: #252526;
+    --console-tab-active: #0e639c;
+    --console-tab-text: #d4d4d4;
+    --console-log-info: #4fc1ff;
+    --console-log-comment: #6a9955;
 }

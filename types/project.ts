@@ -1,6 +1,7 @@
 export interface Project {
     id: number;
     language: string;
+    device?: 'desktop' | 'mobile';
     cover_image_url: string;
     title: string;
     external_link: string;
