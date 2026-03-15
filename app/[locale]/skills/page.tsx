@@ -75,7 +75,9 @@ export default async function SkillsPage(
                         </span>
                     </div>
                     <div
-                        className={`${Styles.lsOutput} ${Styles.lsOutputRoot} ${Styles.lsOutputCompact}`}
+                        className={
+                            `${Styles.lsOutput} ${Styles.lsOutputRoot} ${Styles.lsOutputCompact}`
+                        }
                     >
                         <div className={Styles.lsLine}>
                             <span className={Styles.lsTotal}>total {totalBlocks}</span>
