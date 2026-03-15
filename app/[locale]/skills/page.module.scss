@@ -1,131 +1,191 @@
 .container {
-    max-width: 960px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 0 4rem;
+    padding: 2rem 1rem 4rem;
 }
 
-.pageTitle {
-    margin: 0 0 1.75rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--block-title);
-    letter-spacing: -0.02em;
+.terminal {
+    overflow: hidden;
+    font-family: "Fira Code", "JetBrains Mono", Monaco, Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    background-color: var(--console-bg);
+    border: 1px solid rgb(255 255 255 / 12%);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+}
 
-    @media (max-width: 767.99px) {
-        margin-bottom: 1.25rem;
-        font-size: 1.25rem;
+.terminalHeader {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: var(--console-header-bg);
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.terminalDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+        background-color: #ff5f57;
+    }
+
+    &:nth-child(2) {
+        background-color: #febc2e;
+    }
+
+    &:nth-child(3) {
+        background-color: #28c840;
     }
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+.terminalTitle {
+    margin-left: 8px;
+    color: var(--terminal-muted);
+    font-size: 0.75rem;
 }
 
-.section {
-    padding: 1.5rem 1.25rem;
-    color: var(--color-text);
-    background-color: var(--block-bg);
-    border: 1px solid hsl(0deg 0% 100% / 10%);
-    border-radius: 20px;
-    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
-
-    [data-theme='light'] & {
-        border-color: hsl(0deg 0% 0% / 8%);
-    }
-
-    &:hover {
-        background-color: var(--block-hover-bg);
-        border-color: hsl(0deg 0% 100% / 15%);
-        transform: translateY(-2px);
-
-        [data-theme='light'] & {
-            border-color: hsl(0deg 0% 0% / 12%);
-        }
-    }
+.terminalContent {
+    padding: 16px 18px 20px;
+    overflow-x: auto;
 }
 
-.sectionTitle {
-    margin: 0 0 1rem;
-    padding-bottom: 0.75rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--block-title);
-    letter-spacing: 0.03em;
-    border-bottom: 1px solid hsl(0deg 0% 100% / 12%);
+.promptLine {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 12px;
+}
 
-    [data-theme='light'] & {
-        border-bottom-color: hsl(0deg 0% 0% / 10%);
+.prompt {
+    color: var(--terminal-prompt);
+    font-weight: 500;
+}
+
+.cursor {
+    color: var(--terminal-text);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
     }
 }
 
-.skillsList {
+.lsOutput {
+    margin-bottom: 16px;
+}
+
+.lsLine {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 4px 0.5em;
+    align-items: baseline;
+    margin-bottom: 2px;
 }
 
-.skillItem {
-    list-style: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.lsTotal {
+    color: var(--terminal-muted);
+}
+
+.lsPerms {
+    flex-shrink: 0;
+    width: 5.5rem;
+    color: #dcdcaa;
+}
+
+.lsMeta {
+    flex-shrink: 0;
+    width: 9.2rem;
+    color: var(--terminal-muted);
+}
+
+.lsSize {
+    display: block;
+    flex-shrink: 0;
+    width: 2.5rem;
+    color: var(--terminal-muted);
+    text-align: right;
+}
+
+.lsDate {
+    flex-shrink: 0;
+    width: 6.5rem;
+    color: var(--terminal-muted);
+}
+
+.lsName {
+    color: var(--console-tab-text);
+}
+
+.lsDirName {
+    color: #4fc1ff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
 
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+        opacity: 0.85;
     }
 }
 
-.skillLink {
+.lsOutputRoot .lsDirName {
+    color: #fff;
+}
+
+.lsFileLink {
     display: inline-flex;
-    gap: 0.5rem;
+    gap: 6px;
     align-items: center;
-    padding: 0.5rem 0.85rem;
-    color: var(--contrast-color);
-    font-size: 0.9rem;
-    font-weight: 500;
+    color: var(--console-tab-text);
     text-decoration: none;
-    background: var(--brand-color);
-    border-radius: 12px;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 
     &:hover {
-        opacity: 0.95;
+        color: #4fc1ff;
+        text-decoration: underline;
     }
 }
 
 .skillIcon {
     flex-shrink: 0;
-    padding: 2px;
-    background-color: rgb(255 255 255 / 90%);
-    border-radius: 6px;
-
-    [data-theme='light'] & {
-        background-color: rgb(255 255 255 / 95%);
-    }
 }
 
-@media (max-width: 767.99px) {
+.skillIconWhite {
+    filter: brightness(0) invert(1);
+}
+
+.folderBlock {
+    margin-bottom: 20px;
+    scroll-margin-top: 1rem;
+}
+
+@media (max-width: 575.99px) {
     .container {
-        padding: 1.25rem 0 3rem;
+        padding: 1rem 0.75rem 3rem;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .terminalContent {
+        padding: 12px 14px 16px;
     }
 
-    .section {
-        padding: 1.25rem 1rem;
+    .terminal {
+        font-size: 0.8rem;
     }
 
-    .sectionTitle {
-        font-size: 0.9rem;
-        margin-bottom: 0.85rem;
+    .lsPerms {
+        width: 5rem;
     }
 
-    .skillLink {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.85rem;
+    .lsMeta {
+        width: 6.5rem;
+    }
+
+    .lsDate {
+        width: 6rem;
     }
 }

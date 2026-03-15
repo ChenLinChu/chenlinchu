@@ -95,6 +95,7 @@
             }
         },
         "skills": {
+            "terminalPrompt": "$ cd ~/skills && ls -la",
             "blockTitle": {
                 "frameworks": "Frameworks",
                 "stateManagement": "State Management",
