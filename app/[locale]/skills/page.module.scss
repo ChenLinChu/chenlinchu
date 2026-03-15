@@ -65,6 +65,14 @@
     font-weight: 500;
 }
 
+.promptDesktop {
+    display: inline;
+}
+
+.promptMobile {
+    display: none;
+}
+
 .cursor {
     color: var(--terminal-text);
     animation: blink 1s step-end infinite;
@@ -78,6 +86,10 @@
 
 .lsOutput {
     margin-bottom: 16px;
+}
+
+.lsOutputCompact {
+    display: block;
 }
 
 .lsLine {
@@ -168,6 +180,60 @@
     scroll-margin-top: 1rem;
 }
 
+@media (max-width: 767.99px) {
+    .promptDesktop {
+        display: none;
+    }
+
+    .promptMobile {
+        display: inline;
+    }
+
+    .lsOutputCompact {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 8px 16px;
+        margin-bottom: 16px;
+    }
+
+    .lsOutputCompact .lsLine {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .lsOutputCompact .lsLine:nth-child(1),
+    .lsOutputCompact .lsLine:nth-child(2),
+    .lsOutputCompact .lsLine:nth-child(3) {
+        display: none;
+    }
+
+    .lsOutputCompact .lsTotal,
+    .lsOutputCompact .lsPerms,
+    .lsOutputCompact .lsMeta,
+    .lsOutputCompact .lsSize,
+    .lsOutputCompact .lsDate {
+        display: none;
+    }
+
+    .lsOutputCompact .lsDirName,
+    .lsOutputCompact .lsName,
+    .lsOutputCompact .lsFileLink {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .lsOutputCompact .lsFileLink {
+        gap: 4px;
+    }
+
+    .lsOutputCompact .skillIcon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 @media (max-width: 575.99px) {
     .container {
         padding: 1rem 0.75rem 3rem;
@@ -191,5 +257,10 @@
 
     .lsDate {
         width: 6rem;
+    }
+
+    .lsOutputCompact {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 6px 12px;
     }
 }

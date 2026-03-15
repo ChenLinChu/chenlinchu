@@ -65,9 +65,18 @@ export default async function SkillsPage(
                 </div>
                 <div className={Styles.terminalContent}>
                     <div className={Styles.promptLine}>
-                        <span className={Styles.prompt}>{t('terminalPrompt')}</span>
+                        <span className={Styles.prompt}>
+                            <span className={Styles.promptDesktop}>
+                                {t('terminalPrompt')}
+                            </span>
+                            <span className={Styles.promptMobile}>
+                                {t('terminalPromptShort')}
+                            </span>
+                        </span>
                     </div>
-                    <div className={`${Styles.lsOutput} ${Styles.lsOutputRoot}`}>
+                    <div
+                        className={`${Styles.lsOutput} ${Styles.lsOutputRoot} ${Styles.lsOutputCompact}`}
+                    >
                         <div className={Styles.lsLine}>
                             <span className={Styles.lsTotal}>total {totalBlocks}</span>
                         </div>
@@ -120,10 +129,16 @@ export default async function SkillsPage(
                             >
                                 <div className={Styles.promptLine}>
                                     <span className={Styles.prompt}>
-                                        $ cd {cdPath} && ls -la
+                                        $ cd {cdPath} &&{' '}
+                                        <span className={Styles.promptDesktop}>
+                                            ls -la
+                                        </span>
+                                        <span className={Styles.promptMobile}>
+                                            ls
+                                        </span>
                                     </span>
                                 </div>
-                                <div className={Styles.lsOutput}>
+                                <div className={`${Styles.lsOutput} ${Styles.lsOutputCompact}`}>
                                     <div className={Styles.lsLine}>
                                         <span className={Styles.lsTotal}>
                                             total {block.skills.length}
