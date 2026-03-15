@@ -90,17 +90,45 @@ export default async function Project(
         keywords: project.seo_keywords.join(', ')
     };
 
+    const isMobile = project.device === 'mobile';
+
     return (
         <div className={styles.wrapper}>
-            <div className={styles.coverWrapper}>
-                <Image
-                    className={styles.cover}
-                    src={project.cover_image_url}
-                    alt={project.title}
-                    width={1920}
-                    height={540}
-                    priority
-                />
+            <div className={styles.browserFrame}>
+                <div className={styles.browserHeader}>
+                    <div className={styles.trafficLights}>
+                        <span className={styles.trafficLight} />
+                        <span className={styles.trafficLight} />
+                        <span className={styles.trafficLight} />
+                    </div>
+                </div>
+                <div className={styles.coverWrapper}>
+                    {isMobile ? (
+                        <div className={styles.deviceFrame}>
+                            <div className={styles.browserContent}>
+                                <Image
+                                    className={styles.cover}
+                                    src={project.cover_image_url}
+                                    alt={project.title}
+                                    width={1920}
+                                    height={540}
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    ) : (
+                        <div className={styles.browserContent}>
+                            <Image
+                                className={styles.cover}
+                                src={project.cover_image_url}
+                                alt={project.title}
+                                width={1920}
+                                height={540}
+                                priority
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
             <div className={styles.container}>
                 <script
