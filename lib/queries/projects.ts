@@ -12,7 +12,8 @@ export async function getProjectsByLanguage(
         async () => {
             try {
                 const projects = await sql`
-                    SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug, COALESCE(device, 'desktop') as device
+                    SELECT cover_image_url, title, external_link, subtitle, tags,
+                        build_at, seo_slug, COALESCE(device, 'desktop') as device
                     FROM projects
                     WHERE language = ${language}
                     ORDER BY created_at DESC
@@ -42,7 +43,8 @@ export async function getProjectsByTagAndLanguage(
         async () => {
             try {
                 const projects = await sql`
-                    SELECT cover_image_url, title, external_link, subtitle, tags, build_at, seo_slug, COALESCE(device, 'desktop') as device
+                    SELECT cover_image_url, title, external_link, subtitle, tags,
+                        build_at, seo_slug, COALESCE(device, 'desktop') as device
                     FROM projects
                     WHERE ${decodedTag} = ANY(tags)
                     AND language = ${language}
