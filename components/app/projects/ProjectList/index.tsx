@@ -70,6 +70,7 @@ export default async function ProjectList(
             {projects.map((project, index) => (
                 <Block
                     key={index}
+                    noPadding
                     column={{
                         default: `${index % 2 === 0 ? 1 : 5} / span 4`,
                         lg: '1 / span 8'

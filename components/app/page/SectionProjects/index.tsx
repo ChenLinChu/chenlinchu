@@ -15,6 +15,7 @@ export default async function SectionProjects(
             {projects.map((project, index) => (
                 <Block
                     key={index}
+                    noPadding
                     column={{
                         default: `${index % 2 === 0 ? 1 : 5} / span 4`,
                         xl: `${index % 2 === 0 ? 1 : 5} / span 4`,
