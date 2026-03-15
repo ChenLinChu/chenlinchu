@@ -26,6 +26,16 @@
     --console-tab-text: #d4d4d4;
     --console-log-info: #4fc1ff;
     --console-log-comment: #6a9955;
+    --terminal-border: rgb(255 255 255 / 12%);
+    --terminal-header-border: rgb(255 255 255 / 10%);
+    --terminal-shadow: rgb(0 0 0 / 30%);
+    --terminal-hash: #dcdcaa;
+    --terminal-dir-name: #4fc1ff;
+    --terminal-dir-name-first: #fff;
+    --markdown-code-bg: rgb(0 0 0 / 35%);
+    --markdown-pre-bg: rgb(0 0 0 / 25%);
+    --markdown-blockquote-bg: rgb(0 0 0 / 25%);
+    --markdown-th-bg: rgb(0 0 0 / 2%);
 }
 
 [data-theme="light"] {
@@ -47,11 +57,21 @@
     --terminal-header-bg: #161b22;
     --terminal-text: #58a6ff;
     --terminal-prompt: #79c0ff;
-    --terminal-muted: #8b949e;
-    --console-bg: #1e1e1e;
-    --console-header-bg: #252526;
-    --console-tab-active: #0e639c;
-    --console-tab-text: #d4d4d4;
-    --console-log-info: #4fc1ff;
-    --console-log-comment: #6a9955;
+    --terminal-muted: #656d76;
+    --console-bg: #f6f8fa;
+    --console-header-bg: #eaeef2;
+    --console-tab-active: #0969da;
+    --console-tab-text: #24292f;
+    --console-log-info: #0550ae;
+    --console-log-comment: #116329;
+    --terminal-border: rgb(0 0 0 / 12%);
+    --terminal-header-border: rgb(0 0 0 / 10%);
+    --terminal-shadow: rgb(0 0 0 / 15%);
+    --terminal-hash: #9a6700;
+    --terminal-dir-name: #0550ae;
+    --terminal-dir-name-first: #24292f;
+    --markdown-code-bg: rgb(0 0 0 / 8%);
+    --markdown-pre-bg: rgb(0 0 0 / 6%);
+    --markdown-blockquote-bg: rgb(0 0 0 / 6%);
+    --markdown-th-bg: rgb(0 0 0 / 4%);
 }

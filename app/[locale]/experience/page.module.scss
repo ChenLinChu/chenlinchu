@@ -10,9 +10,9 @@
     font-size: 0.85rem;
     line-height: 1.6;
     background-color: var(--console-bg);
-    border: 1px solid rgb(255 255 255 / 12%);
+    border: 1px solid var(--terminal-border);
     border-radius: 10px;
-    box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+    box-shadow: 0 4px 24px var(--terminal-shadow);
 }
 
 .terminalHeader {
@@ -21,7 +21,7 @@
     align-items: center;
     padding: 10px 14px;
     background-color: var(--console-header-bg);
-    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    border-bottom: 1px solid var(--terminal-header-border);
 }
 
 .terminalDot {
@@ -83,7 +83,7 @@
 .commitBlock {
     margin-bottom: 1.5rem;
     padding: 12px 0;
-    border-bottom: 1px solid rgb(255 255 255 / 6%);
+    border-bottom: 1px solid var(--terminal-header-border);
 
     &:last-of-type {
         margin-bottom: 0;
@@ -101,7 +101,7 @@
 
 .commitHash {
     flex-shrink: 0;
-    color: #dcdcaa;
+    color: var(--terminal-hash);
     font-size: 0.8rem;
 }
 

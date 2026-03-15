@@ -1,5 +1,3 @@
-@use '@/styles/variables' as *;
-
 .wrapper {
     width: 100%;
 }
@@ -16,25 +14,34 @@
     width: 100%;
     margin-bottom: 1.5rem;
     overflow: hidden;
-    background-color: var(--browser-frame-bg);
-    border: 1px solid #616262;
+    background-color: var(--console-bg);
+    border: 1px solid var(--terminal-border);
     border-radius: 10px;
-    box-shadow: 2px 3px 15px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 4px 24px var(--terminal-shadow);
 }
 
 .browserHeader {
     display: flex;
     flex-shrink: 0;
+    gap: 8px;
     align-items: center;
     height: 28px;
-    padding: 0 12px;
-    background-color: var(--browser-header-bg);
+    padding: 0 14px;
+    background-color: var(--console-header-bg);
+    border-bottom: 1px solid var(--terminal-header-border);
 }
 
 .trafficLights {
     display: flex;
     gap: 6px;
     align-items: center;
+}
+
+.browserTitle {
+    margin-left: 8px;
+    color: var(--terminal-muted);
+    font-family: "Fira Code", "JetBrains Mono", Monaco, Consolas, monospace;
+    font-size: 0.75rem;
 }
 
 .trafficLight {
@@ -110,9 +117,9 @@
     overflow: hidden;
     font-family: "Fira Code", "JetBrains Mono", Monaco, Consolas, monospace;
     background-color: var(--console-bg);
-    border: 1px solid rgb(255 255 255 / 12%);
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgb(0 0 0 / 25%);
+    border: 1px solid var(--terminal-border);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px var(--terminal-shadow);
 }
 
 .title {
@@ -123,11 +130,11 @@
     font-weight: 600;
     letter-spacing: 0.02em;
     background-color: var(--console-header-bg);
-    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    border-bottom: 1px solid var(--terminal-header-border);
 
     &::before {
         margin-right: 0.5em;
-        color: #{$content-accent};
+        color: var(--console-log-info);
         font-family: "Fira Code", Monaco, Consolas, monospace;
         font-weight: 400;
         content: '›';
@@ -140,11 +147,11 @@
     color: var(--terminal-muted);
     font-size: 0.9rem;
     letter-spacing: 0.02em;
-    border-bottom: 1px solid rgb(255 255 255 / 8%);
+    border-bottom: 1px solid var(--terminal-header-border);
 
     &::before {
         margin-right: 0.4em;
-        color: #{$content-accent};
+        color: var(--console-log-info);
         font-family: "Fira Code", Monaco, Consolas, monospace;
         content: '›';
     }
@@ -205,7 +212,7 @@
     h6 {
         margin-top: 1.5rem;
         margin-bottom: 0.75rem;
-        color: #{$content-accent};
+        color: var(--console-log-info);
         font-weight: 600;
         line-height: 1.3;
     }
@@ -255,8 +262,8 @@
         margin: 1.25rem 0;
         padding: 0.85rem 1rem;
         color: var(--terminal-muted);
-        background-color: rgb(0 0 0 / 25%);
-        border-left: 3px solid #{$content-accent};
+        background-color: var(--markdown-blockquote-bg);
+        border-left: 3px solid var(--console-log-info);
         border-radius: 0 4px 4px 0;
 
         p {
@@ -268,10 +275,10 @@
     // 程式碼樣式
     code {
         padding: 0.1em 0.35em;
-        color: #{$content-accent};
+        color: var(--console-log-info);
         font-family: "Fira Code", Monaco, Consolas, monospace;
         font-size: 0.88em;
-        background-color: rgb(0 0 0 / 35%);
+        background-color: var(--markdown-code-bg);
         border-radius: 3px;
     }
 
@@ -279,7 +286,7 @@
         margin: 1.25rem 0;
         padding: 1rem 1.25rem;
         overflow-x: auto;
-        background-color: rgb(0 0 0 / 25%);
+        background-color: var(--markdown-pre-bg);
         border-radius: 4px;
 
         code {
@@ -297,20 +304,20 @@
         width: 100%;
         margin: 1.25rem 0;
         overflow-x: auto;
-        border: 1px solid rgb(255 255 255 / 10%);
+        border: 1px solid var(--terminal-header-border);
         border-radius: 4px;
         border-collapse: collapse;
 
         th,
         td {
             padding: 0.5rem 0.75rem;
-            border: 1px solid rgb(255 255 255 / 8%);
+            border: 1px solid var(--terminal-header-border);
         }
 
         th {
-            color: #{$content-accent};
+            color: var(--console-log-info);
             font-weight: 600;
-            background-color: rgb(0 0 0 / 2%);
+            background-color: var(--markdown-th-bg);
         }
     }
 
@@ -318,12 +325,12 @@
     hr {
         margin: 1.5rem 0;
         border: none;
-        border-top: 1px solid rgb(255 255 255 / 10%);
+        border-top: 1px solid var(--terminal-header-border);
     }
 
     // 連結樣式
     a {
-        color: #{$content-accent};
+        color: var(--console-log-info);
         text-decoration: none;
         transition: opacity 0.2s ease;
 

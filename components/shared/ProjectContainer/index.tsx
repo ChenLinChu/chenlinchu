@@ -22,6 +22,9 @@ export default async function ProjectContainer(
                         <span className={Styles.trafficLight} />
                         <span className={Styles.trafficLight} />
                     </div>
+                    <span className={Styles.browserTitle}>
+                        {project.seo_slug}
+                    </span>
                 </div>
                 <Link
                     className={Styles.coverLink}

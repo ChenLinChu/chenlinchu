@@ -102,6 +102,9 @@ export default async function Project(
                             <span className={styles.trafficLight} />
                             <span className={styles.trafficLight} />
                         </div>
+                        <span className={styles.browserTitle}>
+                            {project.seo_slug}
+                        </span>
                     </div>
                     <div className={styles.coverWrapper}>
                         {isMobile ? (

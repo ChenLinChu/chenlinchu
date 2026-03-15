@@ -10,9 +10,9 @@
     font-size: 0.85rem;
     line-height: 1.6;
     background-color: var(--console-bg);
-    border: 1px solid rgb(255 255 255 / 12%);
+    border: 1px solid var(--terminal-border);
     border-radius: 10px;
-    box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+    box-shadow: 0 4px 24px var(--terminal-shadow);
 }
 
 .terminalHeader {
@@ -21,7 +21,7 @@
     align-items: center;
     padding: 10px 14px;
     background-color: var(--console-header-bg);
-    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    border-bottom: 1px solid var(--terminal-header-border);
 }
 
 .terminalDot {
@@ -95,7 +95,7 @@
 .lsPerms {
     flex-shrink: 0;
     width: 5.5rem;
-    color: #dcdcaa;
+    color: var(--terminal-hash);
 }
 
 .lsMeta {
@@ -123,7 +123,7 @@
 }
 
 .lsDirName {
-    color: #4fc1ff;
+    color: var(--terminal-dir-name);
     text-decoration: none;
     transition: opacity 0.2s ease;
     cursor: pointer;
@@ -134,7 +134,7 @@
 }
 
 .lsOutputRoot .lsDirName {
-    color: #fff;
+    color: var(--terminal-dir-name-first);
 }
 
 .lsFileLink {
@@ -146,7 +146,7 @@
     transition: color 0.2s ease;
 
     &:hover {
-        color: #4fc1ff;
+        color: var(--terminal-dir-name);
         text-decoration: underline;
     }
 }
@@ -157,6 +157,10 @@
 
 .skillIconWhite {
     filter: brightness(0) invert(1);
+
+    [data-theme='light'] & {
+        filter: none;
+    }
 }
 
 .folderBlock {
