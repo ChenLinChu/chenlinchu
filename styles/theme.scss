@@ -1,6 +1,4 @@
-$color-black: #1e1e1e;
-$color-white: #fafafa;
-$color-gray: #a3a3a3;
+@use './variables' as *;
 
 :root {
     --bg-image-path: url('/images/bg/dark.jpg');

@@ -87,8 +87,13 @@ export default async function ProjectContainer(
                                     </Link>
                                 ))}
                                 {project.tags.length > 4 && (
-                                    <span className={Styles.more}>
+                                    <span className={Styles.moreDesktop}>
                                         +{project.tags.length - 4}
+                                    </span>
+                                )}
+                                {project.tags.length > 3 && (
+                                    <span className={Styles.moreMobile}>
+                                        +{project.tags.length - 3}
                                     </span>
                                 )}
                             </div>
@@ -103,7 +108,6 @@ export default async function ProjectContainer(
                         </div>
                         <div className={Styles.consoleInput}>
                             <span className={Styles.logInfo}>›</span>
-                            <span className={Styles.consoleCursor} />
                         </div>
                     </div>
                     {project.external_link && (

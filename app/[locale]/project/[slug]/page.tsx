@@ -94,17 +94,30 @@ export default async function Project(
 
     return (
         <div className={styles.wrapper}>
-            <div className={styles.browserFrame}>
-                <div className={styles.browserHeader}>
-                    <div className={styles.trafficLights}>
-                        <span className={styles.trafficLight} />
-                        <span className={styles.trafficLight} />
-                        <span className={styles.trafficLight} />
+            <div className={styles.container}>
+                <div className={styles.browserFrame}>
+                    <div className={styles.browserHeader}>
+                        <div className={styles.trafficLights}>
+                            <span className={styles.trafficLight} />
+                            <span className={styles.trafficLight} />
+                            <span className={styles.trafficLight} />
+                        </div>
                     </div>
-                </div>
-                <div className={styles.coverWrapper}>
-                    {isMobile ? (
-                        <div className={styles.deviceFrame}>
+                    <div className={styles.coverWrapper}>
+                        {isMobile ? (
+                            <div className={styles.deviceFrame}>
+                                <div className={styles.browserContent}>
+                                    <Image
+                                        className={styles.cover}
+                                        src={project.cover_image_url}
+                                        alt={project.title}
+                                        width={1920}
+                                        height={540}
+                                        priority
+                                    />
+                                </div>
+                            </div>
+                        ) : (
                             <div className={styles.browserContent}>
                                 <Image
                                     className={styles.cover}
@@ -115,22 +128,9 @@ export default async function Project(
                                     priority
                                 />
                             </div>
-                        </div>
-                    ) : (
-                        <div className={styles.browserContent}>
-                            <Image
-                                className={styles.cover}
-                                src={project.cover_image_url}
-                                alt={project.title}
-                                width={1920}
-                                height={540}
-                                priority
-                            />
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
-            </div>
-            <div className={styles.container}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -139,28 +139,37 @@ export default async function Project(
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
                 />
-                <h1 className={styles.title}>{project.title}</h1>
-                <p className={styles.subtitle}>{project.subtitle}</p>
-                <div className={styles.skills}>
-                    {skillsData.map((skill, index) => (
-                        <Link
-                            className={styles.skillLink}
-                            key={index}
-                            href={`/projects/${skill.fileName}`}
-                            style={{
-                                '--brand-color': skill.brandColor,
-                                '--contrast-color': getContrastColor(skill.brandColor)
-                            } as React.CSSProperties}
-                        >
-                            {skill.fileName}
-                        </Link>
-                    ))}
-                </div>
+                <div className={styles.contentCard}>
+                    <h1 className={styles.title}>{project.title}</h1>
+                    <p className={styles.subtitle}>{project.subtitle}</p>
+                    <div className={styles.skills}>
+                        {skillsData.map((skill, index) => (
+                            <Link
+                                className={styles.skillLink}
+                                key={index}
+                                href={`/projects/${skill.fileName}`}
+                                style={{
+                                    '--brand-color': skill.brandColor,
+                                    '--contrast-color': getContrastColor(skill.brandColor)
+                                } as React.CSSProperties}
+                            >
+                                <Image
+                                    className={styles.skillIcon}
+                                    src={`/icons/${skill.fileName}.svg`}
+                                    alt={skill.fileName}
+                                    width={24}
+                                    height={24}
+                                />
+                                {skill.fileName}
+                            </Link>
+                        ))}
+                    </div>
 
-                <div className={styles.markdown}>
-                    <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
-                        {content}
-                    </Markdown>
+                    <div className={styles.markdown}>
+                        <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+                            {content}
+                        </Markdown>
+                    </div>
                 </div>
             </div>
         </div>
