@@ -267,6 +267,8 @@
     }
 
     .subtitle {
+        min-width: 0;
+        max-width: calc(100% - 30px);
         overflow: hidden;
         color: var(--terminal-muted);
         text-overflow: ellipsis;
