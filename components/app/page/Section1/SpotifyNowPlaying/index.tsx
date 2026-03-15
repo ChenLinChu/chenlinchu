@@ -27,7 +27,7 @@ export default function SpotifyNowPlaying(): React.ReactNode {
     useEffect(() => {
         void fetchNowPlaying();
 
-        const interval = setInterval(() => void fetchNowPlaying(), 30_000);
+        const interval = setInterval(() => void fetchNowPlaying(), 180_000);
 
         return () => clearInterval(interval);
     }, [fetchNowPlaying]);
